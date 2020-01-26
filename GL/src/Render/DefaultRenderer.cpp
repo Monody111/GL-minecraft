@@ -14,7 +14,7 @@ void DefaultRenderer::render() {
     glm::mat4 projectionMat4(1.0);
     
     viewMat4 = camera->GetViewMatrix();
-    modelMat4 = glm::translate(modelMat4, glm::vec3(-0.5));
+    modelMat4 = glm::translate(modelMat4, glm::vec3(0.0));
     projectionMat4 = glm::perspective(camera->Zoom, (float)800/600, 0.1f, 1000.0f);
     
     GLint modelLoc = glGetUniformLocation(shader->program, "model");

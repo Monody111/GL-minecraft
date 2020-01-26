@@ -80,7 +80,7 @@ void init(){
     glfwSetKeyCallback(window, key_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
-    camera = new Camera(glm::vec3(0.0,0.0,3.0));
+    camera = new Camera(glm::vec3(0.0,0.0,10.0));
     cube = new CubeComponent();
     shader =
     new Shader("/Users/chen.zr/workspace/GL/GL/GL/Shader/VertShader.glsl",

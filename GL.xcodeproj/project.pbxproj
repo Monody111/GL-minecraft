@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973B523DD9F0200EF7A26 /* main.cpp */; };
 		F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */; };
-		F3D973E123DD9F1C00EF7A26 /* CubeRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C323DD9F1C00EF7A26 /* CubeRenderer.cpp */; };
 		F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */; };
 		F3D973E323DD9F1C00EF7A26 /* FileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C723DD9F1C00EF7A26 /* FileUtil.cpp */; };
-		F3D973E423DD9F1C00EF7A26 /* CubeModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973CA23DD9F1C00EF7A26 /* CubeModel.cpp */; };
 		F3D973E523DD9F1C00EF7A26 /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973CE23DD9F1C00EF7A26 /* Model.cpp */; };
 		F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973D223DD9F1C00EF7A26 /* Shader.cpp */; };
 		F3D973E723DD9F1C00EF7A26 /* ShaderLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973D423DD9F1C00EF7A26 /* ShaderLoader.cpp */; };
@@ -59,15 +57,11 @@
 		F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
 		F3D973C023DD9F1C00EF7A26 /* Renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Renderer.hpp; sourceTree = "<group>"; };
 		F3D973C123DD9F1C00EF7A26 /* DefaultRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DefaultRenderer.hpp; sourceTree = "<group>"; };
-		F3D973C223DD9F1C00EF7A26 /* CubeRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CubeRenderer.hpp; sourceTree = "<group>"; };
-		F3D973C323DD9F1C00EF7A26 /* CubeRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CubeRenderer.cpp; sourceTree = "<group>"; };
 		F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultRenderer.cpp; sourceTree = "<group>"; };
 		F3D973C623DD9F1C00EF7A26 /* FileUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileUtil.hpp; sourceTree = "<group>"; };
 		F3D973C723DD9F1C00EF7A26 /* FileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileUtil.cpp; sourceTree = "<group>"; };
 		F3D973C923DD9F1C00EF7A26 /* BaseComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BaseComponent.hpp; sourceTree = "<group>"; };
-		F3D973CA23DD9F1C00EF7A26 /* CubeModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CubeModel.cpp; sourceTree = "<group>"; };
 		F3D973CB23DD9F1C00EF7A26 /* Model.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Model.hpp; sourceTree = "<group>"; };
-		F3D973CC23DD9F1C00EF7A26 /* CubeModel.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CubeModel.hpp; sourceTree = "<group>"; };
 		F3D973CD23DD9F1C00EF7A26 /* CubeComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CubeComponent.hpp; sourceTree = "<group>"; };
 		F3D973CE23DD9F1C00EF7A26 /* Model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
 		F3D973D123DD9F1C00EF7A26 /* ShaderLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ShaderLoader.hpp; sourceTree = "<group>"; };
@@ -134,11 +128,11 @@
 			isa = PBXGroup;
 			children = (
 				F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */,
+				F3D973D523DD9F1C00EF7A26 /* Camera.hpp */,
 				F3D973BF23DD9F1C00EF7A26 /* Render */,
 				F3D973C523DD9F1C00EF7A26 /* Utils */,
 				F3D973C823DD9F1C00EF7A26 /* Components */,
 				F3D973D023DD9F1C00EF7A26 /* Shader */,
-				F3D973D523DD9F1C00EF7A26 /* Camera.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -148,8 +142,6 @@
 			children = (
 				F3D973C023DD9F1C00EF7A26 /* Renderer.hpp */,
 				F3D973C123DD9F1C00EF7A26 /* DefaultRenderer.hpp */,
-				F3D973C223DD9F1C00EF7A26 /* CubeRenderer.hpp */,
-				F3D973C323DD9F1C00EF7A26 /* CubeRenderer.cpp */,
 				F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */,
 			);
 			path = Render;
@@ -168,11 +160,9 @@
 			isa = PBXGroup;
 			children = (
 				F3D973C923DD9F1C00EF7A26 /* BaseComponent.hpp */,
-				F3D973CA23DD9F1C00EF7A26 /* CubeModel.cpp */,
-				F3D973CB23DD9F1C00EF7A26 /* Model.hpp */,
-				F3D973CC23DD9F1C00EF7A26 /* CubeModel.hpp */,
 				F3D973CD23DD9F1C00EF7A26 /* CubeComponent.hpp */,
 				F3D973CE23DD9F1C00EF7A26 /* Model.cpp */,
+				F3D973CB23DD9F1C00EF7A26 /* Model.hpp */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -180,10 +170,10 @@
 		F3D973D023DD9F1C00EF7A26 /* Shader */ = {
 			isa = PBXGroup;
 			children = (
-				F3D973D123DD9F1C00EF7A26 /* ShaderLoader.hpp */,
 				F3D973D223DD9F1C00EF7A26 /* Shader.cpp */,
 				F3D973D323DD9F1C00EF7A26 /* Shader.hpp */,
 				F3D973D423DD9F1C00EF7A26 /* ShaderLoader.cpp */,
+				F3D973D123DD9F1C00EF7A26 /* ShaderLoader.hpp */,
 			);
 			path = Shader;
 			sourceTree = "<group>";
@@ -287,12 +277,10 @@
 				F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */,
 				F3D973E323DD9F1C00EF7A26 /* FileUtil.cpp in Sources */,
 				F3D973E723DD9F1C00EF7A26 /* ShaderLoader.cpp in Sources */,
-				F3D973E423DD9F1C00EF7A26 /* CubeModel.cpp in Sources */,
 				F3D973E523DD9F1C00EF7A26 /* Model.cpp in Sources */,
 				F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */,
 				F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */,
 				F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */,
-				F3D973E123DD9F1C00EF7A26 /* CubeRenderer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
