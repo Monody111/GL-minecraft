@@ -9,13 +9,10 @@
 #include "DefaultRenderer.hpp"
 
 void DefaultRenderer::render() {
-    glm::mat4 modelMat4(1.0);
-    glm::mat4 viewMat4(1.0);
-    glm::mat4 projectionMat4(1.0);
     
-    viewMat4 = camera->GetViewMatrix();
-    modelMat4 = glm::translate(glm::mat4(1.0), component -> position);
-    projectionMat4 = glm::perspective(camera->fov, (float)800/600, 0.1f, 1000.0f);
+    glm::mat4 viewMat4 = camera -> GetViewMatrix();
+    glm::mat4 modelMat4 = glm::translate(glm::mat4(1.0), component -> position);
+    glm::mat4 projectionMat4 = camera -> GetPerspectiveMatrix();
     
     GLint modelLoc = glGetUniformLocation(shader->program, "model");
     GLint viewlLoc = glGetUniformLocation(shader->program, "view");

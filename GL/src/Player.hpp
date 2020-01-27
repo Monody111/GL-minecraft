@@ -11,12 +11,17 @@
 
 #include <stdio.h>
 #include "Controller.hpp"
+#include "GameSetting.hpp"
 
 class Player {
 
 public:
     Controller *controller;
-    Player();
+//    GameSetting *setting;
+    
+//    Player(GameSetting *s);
+    
+    void movement();
 };
 
 #endif /* Player_hpp */

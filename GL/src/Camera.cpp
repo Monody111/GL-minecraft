@@ -93,8 +93,6 @@ void Camera::ProcessMouseScroll(GLfloat offsetY) {
     }else if (this->fov >= 45.0){
         this->fov = 45.0;
     }
-//    glm::mat4 m = glm::perspective(this->Zoom, (GLfloat)800/600, 0.1f, 1000.0f);
-//    std::cout << glm::to_string(m) << std::endl;
 }
 
 void Camera::updateCameraVectors() { 
@@ -108,9 +106,9 @@ void Camera::updateCameraVectors() {
     
 }
 
-//glm::mat4 Camera::GetPerspectiveMatrix() const { 
-//    return glm::perspective(<#T fovy#>, <#T aspect#>, <#T zNear#>, <#T zFar#>);
-//}
+glm::mat4 Camera::GetPerspectiveMatrix() const {
+    return glm::perspective(setting->fov, (float)setting->width/setting->height, 0.01f, 1000.0f);
+}
 
 
 

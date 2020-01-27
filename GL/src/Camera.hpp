@@ -64,6 +64,7 @@ public:
     
     glm::mat4 GetViewMatrix() const;
     glm::mat4 GetPerspectiveMatrix() const;
+    
     void ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime);
     void ProcessMouseMovement(GLfloat offsetX, GLfloat offsetY);
     void ProcessMouseScroll(GLfloat offsetY);
