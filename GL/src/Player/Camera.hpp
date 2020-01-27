@@ -22,13 +22,6 @@ enum Camera_Movement{
     RIGHT
 };
 
-const GLfloat YAW = -90.0;
-
-const GLfloat PITCH = 0.0;
-const GLfloat ZOOM = 45.0;
-const GLfloat SPEED = 3.0;
-const GLfloat SENSITIVITY = 0.05;
-
 class Camera{
 public:
     //camera position
@@ -56,8 +49,6 @@ public:
            GLfloat yaw, GLfloat pitch, GameSetting *setting);
     
     Camera(glm::vec3 cameraPosition, GameSetting *setting);
-    
-    Camera(GLfloat posX, GLfloat posY, GLfloat posZ, GLfloat upX, GLfloat upY, GLfloat upZ, GLfloat yaw, GLfloat pitch);
     
     void setCamera(glm::vec3 position, glm::vec3 worldUp, GLfloat yaw, GLfloat pitch,
     GLfloat speed, GLfloat sensitivity, GLfloat fov);

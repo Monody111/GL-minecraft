@@ -137,15 +137,8 @@
 		F3D973BC23DD9F1C00EF7A26 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				F3D973F923DED43500EF7A26 /* Game.cpp */,
-				F3D973F823DED43500EF7A26 /* Game.hpp */,
-				F3D973FA23DED43500EF7A26 /* GameSetting.hpp */,
-				F3D973FC23DEF92100EF7A26 /* Controller.cpp */,
-				F3D973FD23DEF92100EF7A26 /* Controller.hpp */,
-				F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */,
-				F3D973D523DD9F1C00EF7A26 /* Camera.hpp */,
-				F3D973FF23DEFC9400EF7A26 /* Player.cpp */,
-				F3D9740023DEFC9400EF7A26 /* Player.hpp */,
+				F3D9740223DF183600EF7A26 /* Game */,
+				F3D9740323DF185600EF7A26 /* Player */,
 				F3D973BF23DD9F1C00EF7A26 /* Render */,
 				F3D973C523DD9F1C00EF7A26 /* Utils */,
 				F3D973C823DD9F1C00EF7A26 /* Components */,
@@ -231,6 +224,29 @@
 				F3D973EB23DDA16900EF7A26 /* libSOIL.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3D9740223DF183600EF7A26 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				F3D973F923DED43500EF7A26 /* Game.cpp */,
+				F3D973F823DED43500EF7A26 /* Game.hpp */,
+				F3D973FA23DED43500EF7A26 /* GameSetting.hpp */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		F3D9740323DF185600EF7A26 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				F3D973FC23DEF92100EF7A26 /* Controller.cpp */,
+				F3D973FD23DEF92100EF7A26 /* Controller.hpp */,
+				F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */,
+				F3D973D523DD9F1C00EF7A26 /* Camera.hpp */,
+				F3D973FF23DEFC9400EF7A26 /* Player.cpp */,
+				F3D9740023DEFC9400EF7A26 /* Player.hpp */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

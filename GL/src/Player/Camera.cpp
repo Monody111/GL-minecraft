@@ -41,16 +41,6 @@ void Camera::setCamera(glm::vec3 position, glm::vec3 worldUp, GLfloat yaw, GLflo
     this->updateCameraVectors();
 }
 
-
-Camera::Camera(GLfloat posX, GLfloat posY, GLfloat posZ, GLfloat upX, GLfloat upY, GLfloat upZ, GLfloat yaw, GLfloat pitch):Front(glm::vec3(0.0,0.0,-1.0)),
-MovementSpeed(SPEED), Sensitivity(SENSITIVITY), fov(ZOOM){
-    this->Position = glm::vec3(posX, posY, posZ);
-    this->WorldUp = glm::vec3(upX, upY, upZ);
-    this->Yaw = yaw;
-    this->Pitch = pitch;
-    this->updateCameraVectors();
-}
-
 glm::mat4 Camera::GetViewMatrix() const{ 
     return glm::lookAt(this->Position, this->Position + this->Front, this->WorldUp);
 }

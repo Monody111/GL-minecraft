@@ -6,7 +6,7 @@
 //  Copyright © 2019 Chen.Zr. All rights reserved.
 //
 
-#include "./Model.hpp"
+#include "Model.hpp"
 
 
 Model::Model(const std::vector<GLfloat> &vertextPosition, const std::vector<GLfloat> &textureCroods){
