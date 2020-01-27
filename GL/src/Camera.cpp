@@ -10,20 +10,40 @@
 #include "Camera.hpp"
 //#include "glm/gtx/string_cast.hpp"
 
-
-
-Camera::Camera(glm::vec3 position, glm::vec3 up,
-               GLfloat yaw, GLfloat pitch):Front(glm::vec3(0.0,0.0,-1.0)),
-    MovementSpeed(SPEED), Sensitivity(SENSITIVITY), Zoom(ZOOM){
-                   this->Position = position;
-                   this->WorldUp = up;
-                   this->Yaw = yaw;
-                   this->Pitch = pitch;
-                   this->updateCameraVectors();
+Camera::Camera(glm::vec3 cameraPosition, glm::vec3 worldUp,
+               GLfloat yaw, GLfloat pitch, GameSetting *setting){
+    setCamera(cameraPosition, worldUp, yaw, pitch, setting -> speed, setting -> sensitivity, setting -> fov);
+    this -> setting = setting;
 }
 
+Camera::Camera(glm::vec3 cameraPosition, GameSetting *setting){
+    setCamera(cameraPosition,
+              glm::vec3(0.0,1.0,0.0),
+              -90.0f, 0.0f,
+              setting -> speed,
+              setting -> sensitivity,
+              setting -> fov);
+    
+    this -> setting = setting;
+}
+
+void Camera::setCamera(glm::vec3 position, glm::vec3 worldUp, GLfloat yaw, GLfloat pitch,
+                       GLfloat speed, GLfloat sensitivity, GLfloat fov) {
+    this -> Position = position;
+    this -> WorldUp = worldUp;
+    
+    this->Yaw = yaw;
+    this->Pitch = pitch;
+    this->MovementSpeed = speed;
+    this->Sensitivity = sensitivity;
+    this->fov = fov;
+    
+    this->updateCameraVectors();
+}
+
+
 Camera::Camera(GLfloat posX, GLfloat posY, GLfloat posZ, GLfloat upX, GLfloat upY, GLfloat upZ, GLfloat yaw, GLfloat pitch):Front(glm::vec3(0.0,0.0,-1.0)),
-MovementSpeed(SPEED), Sensitivity(SENSITIVITY), Zoom(ZOOM){
+MovementSpeed(SPEED), Sensitivity(SENSITIVITY), fov(ZOOM){
     this->Position = glm::vec3(posX, posY, posZ);
     this->WorldUp = glm::vec3(upX, upY, upZ);
     this->Yaw = yaw;
@@ -66,12 +86,12 @@ void Camera::ProcessMouseMovement(GLfloat offsetX, GLfloat offsetY) {
 }
 
 void Camera::ProcessMouseScroll(GLfloat offsetY) { 
-    if(this->Zoom >= 1.0 && this->Zoom <= 45.0){
-        this->Zoom -= offsetY * 0.1;
-    }else if (this->Zoom <= 1.0){
-        this->Zoom = 1.0;
-    }else if (this->Zoom >= 45.0){
-        this->Zoom = 45.0;
+    if(this->fov >= 1.0 && this->fov <= 45.0){
+        this->fov -= offsetY * 0.1;
+    }else if (this->fov <= 1.0){
+        this->fov = 1.0;
+    }else if (this->fov >= 45.0){
+        this->fov = 45.0;
     }
 //    glm::mat4 m = glm::perspective(this->Zoom, (GLfloat)800/600, 0.1f, 1000.0f);
 //    std::cout << glm::to_string(m) << std::endl;
@@ -87,6 +107,11 @@ void Camera::updateCameraVectors() {
     this->Up = glm::normalize(glm::cross(this->Right, this->Front));
     
 }
+
+//glm::mat4 Camera::GetPerspectiveMatrix() const { 
+//    return glm::perspective(<#T fovy#>, <#T aspect#>, <#T zNear#>, <#T zFar#>);
+//}
+
 
 
 

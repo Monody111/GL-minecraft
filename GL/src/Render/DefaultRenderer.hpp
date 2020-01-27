@@ -14,6 +14,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Renderer.hpp"
+#include "BaseComponent.hpp"
 
 class DefaultRenderer: public Renderer{
 public:
@@ -21,7 +22,7 @@ public:
     
     DefaultRenderer() = default;
     void render() override;
-    void bindModel(Model *model) override;
+    void bindMesh(BaseComponent *mesh) override;
     void bindCamera(Camera *camera) override;
     void bindShader(Shader *shader) override;
     

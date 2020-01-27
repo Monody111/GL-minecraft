@@ -9,18 +9,27 @@
 #ifndef BaseComponet_hpp
 #define BaseComponet_hpp
 
-#include <string>
-#include <vector>
-#include <glm/glm.hpp>
-
 #include "Model.hpp"
+#include <glm/glm.hpp>
 
 class BaseComponent {
     
 public:
-    Model *model;
-//    virtual ~BaseComponent(){};
-    virtual Model *getComponentModel();
+    
+    glm::vec3 position = glm::vec3(0.0);
+    glm::mat4 rotation = glm::mat4(1.0);
+    
+    Model *model = nullptr;
+    
+    inline Model *getComponentModel(){
+        if(model){
+            return model;
+        }else{
+            std::cout << "invalid model pointer" << std::endl;
+            abort();
+        }
+    }
+    virtual ~BaseComponent(){};
 };
 
 #endif /* BaseComponet_hpp */

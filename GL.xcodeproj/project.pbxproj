@@ -23,6 +23,9 @@
 		F3D973F323DDA16900EF7A26 /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D973EC23DDA16900EF7A26 /* libGLEW.2.1.0.dylib */; };
 		F3D973F423DDA16900EF7A26 /* libGLEW.2.1.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = F3D973EC23DDA16900EF7A26 /* libGLEW.2.1.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F3D973F723DDA17400EF7A26 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D973F623DDA17400EF7A26 /* OpenGL.framework */; };
+		F3D973FB23DED43500EF7A26 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973F923DED43500EF7A26 /* Game.cpp */; };
+		F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973FC23DEF92100EF7A26 /* Controller.cpp */; };
+		F3D9740123DEFC9400EF7A26 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973FF23DEFC9400EF7A26 /* Player.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -78,6 +81,13 @@
 		F3D973EB23DDA16900EF7A26 /* libSOIL.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSOIL.dylib; path = lib/libSOIL.dylib; sourceTree = "<group>"; };
 		F3D973EC23DDA16900EF7A26 /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		F3D973F623DDA17400EF7A26 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		F3D973F823DED43500EF7A26 /* Game.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		F3D973F923DED43500EF7A26 /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		F3D973FA23DED43500EF7A26 /* GameSetting.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GameSetting.hpp; sourceTree = "<group>"; };
+		F3D973FC23DEF92100EF7A26 /* Controller.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Controller.cpp; sourceTree = "<group>"; };
+		F3D973FD23DEF92100EF7A26 /* Controller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
+		F3D973FF23DEFC9400EF7A26 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
+		F3D9740023DEFC9400EF7A26 /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +137,15 @@
 		F3D973BC23DD9F1C00EF7A26 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				F3D973F923DED43500EF7A26 /* Game.cpp */,
+				F3D973F823DED43500EF7A26 /* Game.hpp */,
+				F3D973FA23DED43500EF7A26 /* GameSetting.hpp */,
+				F3D973FC23DEF92100EF7A26 /* Controller.cpp */,
+				F3D973FD23DEF92100EF7A26 /* Controller.hpp */,
 				F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */,
 				F3D973D523DD9F1C00EF7A26 /* Camera.hpp */,
+				F3D973FF23DEFC9400EF7A26 /* Player.cpp */,
+				F3D9740023DEFC9400EF7A26 /* Player.hpp */,
 				F3D973BF23DD9F1C00EF7A26 /* Render */,
 				F3D973C523DD9F1C00EF7A26 /* Utils */,
 				F3D973C823DD9F1C00EF7A26 /* Components */,
@@ -275,8 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */,
+				F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */,
 				F3D973E323DD9F1C00EF7A26 /* FileUtil.cpp in Sources */,
 				F3D973E723DD9F1C00EF7A26 /* ShaderLoader.cpp in Sources */,
+				F3D9740123DEFC9400EF7A26 /* Player.cpp in Sources */,
+				F3D973FB23DED43500EF7A26 /* Game.cpp in Sources */,
 				F3D973E523DD9F1C00EF7A26 /* Model.cpp in Sources */,
 				F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */,
 				F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */,

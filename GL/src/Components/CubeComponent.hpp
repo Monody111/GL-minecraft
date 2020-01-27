@@ -12,7 +12,7 @@
 #include "BaseComponent.hpp"
 
 
-class CubeComponent{
+class CubeComponent: public BaseComponent{
     
 public:
     std::string name = "cube";
@@ -57,22 +57,12 @@ public:
         0.0, 1.0, 1.0, 1.0, 0.0, 0.0,
     };
     
-    Model *model = nullptr;
-    
     CubeComponent(){
         model = new Model(vertextPosition, textureCroods);
-    };
-    
-    Model *getComponentModel()
-    {
-        return model;
     };
     
     ~CubeComponent(){
         delete model;
     };
 };
-
-
-
 #endif /* CubeComponent_hpp */

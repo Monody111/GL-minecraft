@@ -12,6 +12,7 @@
 #include <glm/glm.hpp>
 #include <GL/glew.h>
 #include <glm/gtc/matrix_transform.hpp>
+#include "GameSetting.hpp"
 
 // enum be used in movement
 enum Camera_Movement{
@@ -41,18 +42,28 @@ public:
     //world up
     glm::vec3 WorldUp;
     
-    GLfloat Pitch;
-    GLfloat Yaw;
+    GameSetting *setting;
+    
+    GLfloat Pitch = 0.0f;
+    GLfloat Yaw = -90.0f;
     
     GLfloat MovementSpeed;
     GLfloat Sensitivity;
-    GLfloat Zoom;
+    GLfloat fov;
     
-    Camera(glm::vec3 position = glm::vec3(0.0),
-           glm::vec3 up = glm::vec3(0.0,1.0,0.0),
-           GLfloat yaw = YAW, GLfloat pitch = PITCH);
+    Camera(glm::vec3 cameraPosition,
+           glm::vec3 WorldUp,
+           GLfloat yaw, GLfloat pitch, GameSetting *setting);
+    
+    Camera(glm::vec3 cameraPosition, GameSetting *setting);
+    
     Camera(GLfloat posX, GLfloat posY, GLfloat posZ, GLfloat upX, GLfloat upY, GLfloat upZ, GLfloat yaw, GLfloat pitch);
+    
+    void setCamera(glm::vec3 position, glm::vec3 worldUp, GLfloat yaw, GLfloat pitch,
+    GLfloat speed, GLfloat sensitivity, GLfloat fov);
+    
     glm::mat4 GetViewMatrix() const;
+    glm::mat4 GetPerspectiveMatrix() const;
     void ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime);
     void ProcessMouseMovement(GLfloat offsetX, GLfloat offsetY);
     void ProcessMouseScroll(GLfloat offsetY);
