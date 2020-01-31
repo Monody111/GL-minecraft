@@ -9,19 +9,23 @@
 #ifndef Player_hpp
 #define Player_hpp
 
-#include <stdio.h>
+#include <glm/glm.hpp>
 #include "Controller.hpp"
 #include "GameSetting.hpp"
+#include "Camera.hpp"
 
 class Player {
 
 public:
-    Controller *controller;
-//    GameSetting *setting;
+    glm::vec3 position;
     
-//    Player(GameSetting *s);
+    Controller *controller = nullptr;
+    Camera *camera = nullptr;
     
-    void movement();
+    Player(GameSetting *setting);
+    
+    void movement(GLfloat deltaTime);
+    void view();
 };
 
 #endif /* Player_hpp */

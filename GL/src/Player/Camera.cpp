@@ -8,7 +8,6 @@
 #include <iostream>
 
 #include "Camera.hpp"
-//#include "glm/gtx/string_cast.hpp"
 
 Camera::Camera(glm::vec3 cameraPosition, glm::vec3 worldUp,
                GLfloat yaw, GLfloat pitch, GameSetting *setting){
@@ -54,11 +53,12 @@ void Camera::ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime) {
         this->Position -= this->Front * velocity;
     }
     if (direction == RIGHT) {
-        this->Position += this->Right * velocity;
-    }
-    if (direction == LEFT) {
         this->Position -= this->Right * velocity;
     }
+    if (direction == LEFT) {
+        this->Position += this->Right * velocity;
+    }
+    Position.y = 0.0f;
 }
 
 void Camera::ProcessMouseMovement(GLfloat offsetX, GLfloat offsetY) {
@@ -93,7 +93,6 @@ void Camera::updateCameraVectors() {
     this->Front = glm::normalize(front);
     this->Right = glm::normalize(glm::cross(this->Front,this->WorldUp));
     this->Up = glm::normalize(glm::cross(this->Right, this->Front));
-    
 }
 
 glm::mat4 Camera::GetPerspectiveMatrix() const {

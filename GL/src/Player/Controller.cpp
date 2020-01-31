@@ -23,15 +23,12 @@ void Controller::key_callback(GLFWwindow *window,int key, int scancode, int acti
 
 void Controller::mouse_callback(GLFWwindow *window, double xpos, double ypos){
     if (firstMouse) {
-        int width;
-        int height;
-        glfwGetWindowSize(window, &width, &height);
-        lastX = width/2;
-        lastY = height/2;
+        lastX = xpos;
+        lastY = ypos;
         firstMouse = false;
     }
-    GLfloat xoffset = xpos - lastX ;
-    GLfloat yoffset = lastY - ypos;
+    xoffset = lastX - xpos;
+    yoffset = ypos - lastY;
 
     lastX = xpos;
     lastY = ypos;
@@ -39,3 +36,4 @@ void Controller::mouse_callback(GLFWwindow *window, double xpos, double ypos){
     std::cout << "xoffset = " << xoffset <<", " << "yoffset = " << yoffset <<std::endl;
 //    camera->ProcessMouseMovement(xoffset, yoffset);
 }
+

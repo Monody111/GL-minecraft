@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF223E19EFF006F2E05 /* Timer.cpp */; };
 		F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973B523DD9F0200EF7A26 /* main.cpp */; };
 		F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */; };
 		F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */; };
@@ -26,6 +27,7 @@
 		F3D973FB23DED43500EF7A26 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973F923DED43500EF7A26 /* Game.cpp */; };
 		F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973FC23DEF92100EF7A26 /* Controller.cpp */; };
 		F3D9740123DEFC9400EF7A26 /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973FF23DEFC9400EF7A26 /* Player.cpp */; };
+		F3D9741023DF2B7100EF7A26 /* Chunk.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D9740E23DF2B7100EF7A26 /* Chunk.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +57,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F3D47AF023E05DFD006F2E05 /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
+		F3D47AF223E19EFF006F2E05 /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		F3D47AF323E19EFF006F2E05 /* Timer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Timer.hpp; sourceTree = "<group>"; };
 		F3D973B223DD9F0200EF7A26 /* GL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GL; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D973B523DD9F0200EF7A26 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -88,6 +93,8 @@
 		F3D973FD23DEF92100EF7A26 /* Controller.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Controller.hpp; sourceTree = "<group>"; };
 		F3D973FF23DEFC9400EF7A26 /* Player.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		F3D9740023DEFC9400EF7A26 /* Player.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Player.hpp; sourceTree = "<group>"; };
+		F3D9740E23DF2B7100EF7A26 /* Chunk.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Chunk.cpp; sourceTree = "<group>"; };
+		F3D9740F23DF2B7100EF7A26 /* Chunk.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Chunk.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +144,7 @@
 		F3D973BC23DD9F1C00EF7A26 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				F3D9740D23DF2B5900EF7A26 /* Chunks */,
 				F3D9740223DF183600EF7A26 /* Game */,
 				F3D9740323DF185600EF7A26 /* Player */,
 				F3D973BF23DD9F1C00EF7A26 /* Render */,
@@ -162,6 +170,8 @@
 			children = (
 				F3D973C623DD9F1C00EF7A26 /* FileUtil.hpp */,
 				F3D973C723DD9F1C00EF7A26 /* FileUtil.cpp */,
+				F3D47AF223E19EFF006F2E05 /* Timer.cpp */,
+				F3D47AF323E19EFF006F2E05 /* Timer.hpp */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -249,6 +259,16 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		F3D9740D23DF2B5900EF7A26 /* Chunks */ = {
+			isa = PBXGroup;
+			children = (
+				F3D9740E23DF2B7100EF7A26 /* Chunk.cpp */,
+				F3D9740F23DF2B7100EF7A26 /* Chunk.hpp */,
+				F3D47AF023E05DFD006F2E05 /* Mesh.hpp */,
+			);
+			path = Chunks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -308,7 +328,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */,
+				F3D9741023DF2B7100EF7A26 /* Chunk.cpp in Sources */,
 				F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */,
+				F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */,
 				F3D973E323DD9F1C00EF7A26 /* FileUtil.cpp in Sources */,
 				F3D973E723DD9F1C00EF7A26 /* ShaderLoader.cpp in Sources */,
 				F3D9740123DEFC9400EF7A26 /* Player.cpp in Sources */,

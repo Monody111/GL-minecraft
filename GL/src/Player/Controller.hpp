@@ -18,7 +18,12 @@ class Controller {
 public:
     
     bool keys[1024];
+    
+    GLfloat xoffset = 0.0;
+    GLfloat yoffset = 0.0;
+    
     bool firstMouse = true;
+    
     GLfloat deltaTime = 0.0f;
     GLfloat lastTime = 0.0f;
     GLfloat lastX, lastY;

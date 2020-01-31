@@ -16,19 +16,20 @@
 #include "DefaultRenderer.hpp"
 #include "GameSetting.hpp"
 #include "CubeComponent.hpp"
-#include "Controller.hpp"
+#include "Player.hpp"
 
 class Game {
     
 public:
-    GameSetting *setting;
-    GLFWwindow *window;
-    Renderer *renderer;
-    Controller *c;
+    GameSetting *setting = nullptr;
+    GLFWwindow *window = nullptr;
+    Renderer *renderer = nullptr;
+//    Controller *c;
+    GLfloat lastTime = 0.0;
+    GLfloat currentTime = 0.0;
+    Player *player = nullptr;
     
     Game(GameSetting *setting);
-
-    void processKey(int key, int scancode, int action, int mods);
     
     inline static void key_callback(GLFWwindow* window,int key,int scancode,int action,int mods){
         Controller *c = static_cast<Controller*>(glfwGetWindowUserPointer(window));
@@ -39,7 +40,7 @@ public:
         Controller *c = static_cast<Controller*>(glfwGetWindowUserPointer(window));
         c -> mouse_callback(window, xpos, ypos);
     }
-//    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
     void loadWindow();
     void runLoop();
     void loadRenderer();

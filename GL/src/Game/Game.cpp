@@ -10,9 +10,14 @@
 
 void Game::runLoop() {
     while (!glfwWindowShouldClose(window)) {
+        GLfloat currentTime = glfwGetTime();
+        GLfloat deltaTime = currentTime - lastTime;
+        lastTime = currentTime;
         glfwPollEvents();
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glClearColor(0.0, 0.0f, 0.0f, 1.0);
+        player -> movement(deltaTime);
+        player -> view();
         renderer->render();
         glfwSwapBuffers(window);
     }
@@ -35,15 +40,13 @@ Game::Game(GameSetting *setting){
 void Game::loadRenderer() {
     Shader *shader =
     new Shader ("/Users/chen.zr/workspace/GL/LearnOpenGL/LearnOpenGL/Shader/VertShader.glsl",
-               "/Users/chen.zr/workspace/GL/LearnOpenGL/LearnOpenGL/Shader/FragShader.glsl");
-    
-    Camera *camera = new Camera(glm::vec3(0.0, 0.0, 3.0), this -> setting);
+                "/Users/chen.zr/workspace/GL/LearnOpenGL/LearnOpenGL/Shader/FragShader.glsl");
     
     CubeComponent *mesh = new CubeComponent();
     
     renderer = new DefaultRenderer();
     renderer -> bindShader(shader);
-    renderer -> bindCamera(camera);
+    renderer -> bindCamera(player -> camera);
     renderer -> bindMesh(mesh);
 }
 
@@ -54,19 +57,16 @@ void Game::loadWindow() {
         setting -> width = vm -> width;
         setting -> height = vm -> height;
     }
-    c = new Controller();
     window=glfwCreateWindow(setting->width, setting->height,"GL",nullptr, nullptr);
     glfwMakeContextCurrent(window);
-    glfwSetWindowUserPointer(window, this -> c);
+    player = new Player(this -> setting);
+    glfwSetWindowUserPointer(window, this -> player -> controller);
     glfwSetKeyCallback(window, key_callback);
     glfwSetCursorPosCallback(window, cursorpos_callback);
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glViewport(0, 0, setting->width, setting->height);
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glEnable(GL_DEPTH_TEST);
-}
-
-void processKey(int key, int scancode, int action, int mods){
-    std::cout << key << " "<< scancode << " " << action << " " << mods << std::endl;
 }
 
 
