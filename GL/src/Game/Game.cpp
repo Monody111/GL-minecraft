@@ -18,6 +18,7 @@ void Game::runLoop() {
         glClearColor(0.0, 0.0f, 0.0f, 1.0);
         player -> movement(deltaTime);
         player -> view();
+        player -> verticality(deltaTime);
         renderer->render();
         glfwSwapBuffers(window);
     }
@@ -39,34 +40,44 @@ Game::Game(GameSetting *setting){
 
 void Game::loadRenderer() {
     Shader *shader =
-    new Shader ("/Users/chen.zr/workspace/GL/LearnOpenGL/LearnOpenGL/Shader/VertShader.glsl",
-                "/Users/chen.zr/workspace/GL/LearnOpenGL/LearnOpenGL/Shader/FragShader.glsl");
+    new Shader ("/Users/chen.zr/workspace/GL/GL/GL/Shader/instancingShader.glsl",
+                "/Users/chen.zr/workspace/GL/GL/GL/Shader/FragShader.glsl");
     
-    CubeComponent *mesh = new CubeComponent();
+//    CubeComponent *mesh = new CubeComponent();
     
-    renderer = new DefaultRenderer();
+    Section *s = new Section();
+    
+    renderer = new InstancingRenderer();
     renderer -> bindShader(shader);
     renderer -> bindCamera(player -> camera);
-    renderer -> bindMesh(mesh);
+    renderer -> bindModel(s -> model);
 }
 
 void Game::loadWindow() {
     
     if (setting -> fullScreen) {
-        const GLFWvidmode *vm = glfwGetVideoMode(glfwGetPrimaryMonitor());
+        GLFWmonitor *monitor = glfwGetPrimaryMonitor();
+        const GLFWvidmode *vm = glfwGetVideoMode(monitor);
         setting -> width = vm -> width;
         setting -> height = vm -> height;
+        window=glfwCreateWindow(vm -> width, vm -> height,"GL",monitor, nullptr);
+    }else{
+        window=glfwCreateWindow(setting->width, setting->height,"GL",nullptr, nullptr);
     }
-    window=glfwCreateWindow(setting->width, setting->height,"GL",nullptr, nullptr);
     glfwMakeContextCurrent(window);
-    player = new Player(this -> setting);
+    
+    player = new Player(this -> setting, glm::vec3(8.0, -1.0, 8.0));
     glfwSetWindowUserPointer(window, this -> player -> controller);
+    
     glfwSetKeyCallback(window, key_callback);
     glfwSetCursorPosCallback(window, cursorpos_callback);
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    
     glViewport(0, 0, setting->width, setting->height);
+    
     glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glEnable(GL_DEPTH_TEST);
+    glCullFace(GL_BACK);
 }
 
 

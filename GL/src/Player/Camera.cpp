@@ -9,13 +9,13 @@
 
 #include "Camera.hpp"
 
-Camera::Camera(glm::vec3 cameraPosition, glm::vec3 worldUp,
+Camera::Camera(glm::vec3 *cameraPosition, glm::vec3 worldUp,
                GLfloat yaw, GLfloat pitch, GameSetting *setting){
     setCamera(cameraPosition, worldUp, yaw, pitch, setting -> speed, setting -> sensitivity, setting -> fov);
     this -> setting = setting;
 }
 
-Camera::Camera(glm::vec3 cameraPosition, GameSetting *setting){
+Camera::Camera(glm::vec3 *cameraPosition, GameSetting *setting){
     setCamera(cameraPosition,
               glm::vec3(0.0,1.0,0.0),
               -90.0f, 0.0f,
@@ -26,9 +26,9 @@ Camera::Camera(glm::vec3 cameraPosition, GameSetting *setting){
     this -> setting = setting;
 }
 
-void Camera::setCamera(glm::vec3 position, glm::vec3 worldUp, GLfloat yaw, GLfloat pitch,
+void Camera::setCamera(glm::vec3 *cameraPosition, glm::vec3 worldUp, GLfloat yaw, GLfloat pitch,
                        GLfloat speed, GLfloat sensitivity, GLfloat fov) {
-    this -> Position = position;
+    this -> Position = cameraPosition;
     this -> WorldUp = worldUp;
     
     this->Yaw = yaw;
@@ -41,24 +41,25 @@ void Camera::setCamera(glm::vec3 position, glm::vec3 worldUp, GLfloat yaw, GLflo
 }
 
 glm::mat4 Camera::GetViewMatrix() const{ 
-    return glm::lookAt(this->Position, this->Position + this->Front, this->WorldUp);
+    return glm::lookAt(*this->Position, *this->Position + this->Front, this->WorldUp);
 }
 
-void Camera::ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime) {
+void Camera::ProcessMovement(Camera_Movement direction, GLfloat deltaTime) {
+    GLfloat y = Position->y;
     GLfloat velocity = this->MovementSpeed * deltaTime;
     if (direction == FORWARD) {
-        this->Position += this->Front * velocity;
+        *this->Position += this->Front * velocity;
     }
     if (direction == BACKWARD) {
-        this->Position -= this->Front * velocity;
+        *this->Position -= this->Front * velocity;
     }
     if (direction == RIGHT) {
-        this->Position -= this->Right * velocity;
+        *this->Position -= this->Right * velocity;
     }
     if (direction == LEFT) {
-        this->Position += this->Right * velocity;
+        *this->Position += this->Right * velocity;
     }
-    Position.y = 0.0f;
+    Position->y = y;
 }
 
 void Camera::ProcessMouseMovement(GLfloat offsetX, GLfloat offsetY) {
@@ -85,7 +86,7 @@ void Camera::ProcessMouseScroll(GLfloat offsetY) {
     }
 }
 
-void Camera::updateCameraVectors() { 
+void Camera::updateCameraVectors() {
     glm::vec3 front(0.0,0.0,-1.0);
     front.x = cos(glm::radians(this->Yaw)) * cos(glm::radians(this->Pitch));
     front.y = sin(glm::radians(this->Pitch));
@@ -98,6 +99,17 @@ void Camera::updateCameraVectors() {
 glm::mat4 Camera::GetPerspectiveMatrix() const {
     return glm::perspective(setting->fov, (float)setting->width/setting->height, 0.01f, 1000.0f);
 }
+
+void Camera::ProcessVerticality(Camera_Movement direction, GLfloat deltaTime) { 
+    GLfloat velocity = this->MovementSpeed * deltaTime;
+    if (direction == ABOVE) {
+        *this->Position -= this->WorldUp * velocity;
+    }
+    if (direction == BOTTOM) {
+        *this->Position += this->WorldUp * velocity;
+    }
+}
+
 
 
 

@@ -1,14 +1,14 @@
 //
-//  DefaultRenderer.cpp
-//  LearnOpenGL
+//  InstancingRenderer.cpp
+//  GL
 //
-//  Created by Chen.Zr on 2020/1/19.
+//  Created by Chen.Zr on 2020/1/31.
 //  Copyright © 2020 Chen.Zr. All rights reserved.
 //
 
-#include "DefaultRenderer.hpp"
+#include "InstancingRenderer.hpp"
 
-void DefaultRenderer::render() {
+void InstancingRenderer::render() {
     
     glm::mat4 viewMat4 = camera -> GetViewMatrix();
 //    glm::mat4 modelMat4 = glm::translate(glm::mat4(1.0), component -> position);
@@ -24,17 +24,17 @@ void DefaultRenderer::render() {
     
     shader->Use();
     model->bindVAO();
-    glDrawArrays(GL_TRIANGLES, 0, 36);
+    glDrawArraysInstanced(GL_TRIANGLES, 0, 36, 256);
 }
 
-void DefaultRenderer::bindModel(Model *model) {
+void InstancingRenderer::bindModel(Model *model){
     if(model){
-        this->model = model;
+        this-> model = model;
     }else{
         std::cout << "invaild pointer mesh" << std::endl;
     }
 }
-void DefaultRenderer::bindCamera(Camera *camera) {
+void InstancingRenderer::bindCamera(Camera *camera) {
     if(camera){
         this->camera = camera;
     }else{
@@ -42,12 +42,13 @@ void DefaultRenderer::bindCamera(Camera *camera) {
     }
 }
 
-void DefaultRenderer::bindShader(Shader *shader) {
+void InstancingRenderer::bindShader(Shader *shader) {
     if(shader){
         this->shader = shader;
     }else{
         std::cout << "invaild pointer shader" << std::endl;
     }
 }
+
 
 

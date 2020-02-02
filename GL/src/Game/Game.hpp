@@ -17,6 +17,8 @@
 #include "GameSetting.hpp"
 #include "CubeComponent.hpp"
 #include "Player.hpp"
+#include "InstancingRenderer.hpp"
+#include "Section.hpp"
 
 class Game {
     

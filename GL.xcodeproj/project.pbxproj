@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF223E19EFF006F2E05 /* Timer.cpp */; };
+		F3D47AF723E47178006F2E05 /* InstancingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF523E47178006F2E05 /* InstancingRenderer.cpp */; };
+		F3D47AFB23E47818006F2E05 /* Section.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF923E47818006F2E05 /* Section.cpp */; };
+		F3D47AFF23E6DA44006F2E05 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AFD23E6DA44006F2E05 /* Texture.cpp */; };
 		F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973B523DD9F0200EF7A26 /* main.cpp */; };
 		F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */; };
 		F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */; };
@@ -60,6 +63,13 @@
 		F3D47AF023E05DFD006F2E05 /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
 		F3D47AF223E19EFF006F2E05 /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		F3D47AF323E19EFF006F2E05 /* Timer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Timer.hpp; sourceTree = "<group>"; };
+		F3D47AF523E47178006F2E05 /* InstancingRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InstancingRenderer.cpp; sourceTree = "<group>"; };
+		F3D47AF623E47178006F2E05 /* InstancingRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InstancingRenderer.hpp; sourceTree = "<group>"; };
+		F3D47AF823E47244006F2E05 /* instancingShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = instancingShader.glsl; sourceTree = "<group>"; };
+		F3D47AF923E47818006F2E05 /* Section.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Section.cpp; sourceTree = "<group>"; };
+		F3D47AFA23E47818006F2E05 /* Section.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Section.hpp; sourceTree = "<group>"; };
+		F3D47AFD23E6DA44006F2E05 /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		F3D47AFE23E6DA44006F2E05 /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
 		F3D973B223DD9F0200EF7A26 /* GL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GL; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D973B523DD9F0200EF7A26 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -113,6 +123,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3D47AFC23E6D8B9006F2E05 /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				F3D47AFD23E6DA44006F2E05 /* Texture.cpp */,
+				F3D47AFE23E6DA44006F2E05 /* Texture.hpp */,
+			);
+			path = Texture;
+			sourceTree = "<group>";
+		};
 		F3D973A923DD9F0200EF7A26 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +163,7 @@
 		F3D973BC23DD9F1C00EF7A26 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				F3D47AFC23E6D8B9006F2E05 /* Texture */,
 				F3D9740D23DF2B5900EF7A26 /* Chunks */,
 				F3D9740223DF183600EF7A26 /* Game */,
 				F3D9740323DF185600EF7A26 /* Player */,
@@ -161,6 +181,8 @@
 				F3D973C023DD9F1C00EF7A26 /* Renderer.hpp */,
 				F3D973C123DD9F1C00EF7A26 /* DefaultRenderer.hpp */,
 				F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */,
+				F3D47AF523E47178006F2E05 /* InstancingRenderer.cpp */,
+				F3D47AF623E47178006F2E05 /* InstancingRenderer.hpp */,
 			);
 			path = Render;
 			sourceTree = "<group>";
@@ -220,6 +242,7 @@
 				F3D973DC23DD9F1C00EF7A26 /* LightFragShader.glsl */,
 				F3D973DD23DD9F1C00EF7A26 /* FragShader.glsl */,
 				F3D973DE23DD9F1C00EF7A26 /* VertShader.glsl */,
+				F3D47AF823E47244006F2E05 /* instancingShader.glsl */,
 			);
 			path = Shader;
 			sourceTree = "<group>";
@@ -265,6 +288,8 @@
 				F3D9740E23DF2B7100EF7A26 /* Chunk.cpp */,
 				F3D9740F23DF2B7100EF7A26 /* Chunk.hpp */,
 				F3D47AF023E05DFD006F2E05 /* Mesh.hpp */,
+				F3D47AF923E47818006F2E05 /* Section.cpp */,
+				F3D47AFA23E47818006F2E05 /* Section.hpp */,
 			);
 			path = Chunks;
 			sourceTree = "<group>";
@@ -327,17 +352,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D47AFF23E6DA44006F2E05 /* Texture.cpp in Sources */,
 				F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */,
 				F3D9741023DF2B7100EF7A26 /* Chunk.cpp in Sources */,
 				F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */,
 				F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */,
 				F3D973E323DD9F1C00EF7A26 /* FileUtil.cpp in Sources */,
+				F3D47AFB23E47818006F2E05 /* Section.cpp in Sources */,
 				F3D973E723DD9F1C00EF7A26 /* ShaderLoader.cpp in Sources */,
 				F3D9740123DEFC9400EF7A26 /* Player.cpp in Sources */,
 				F3D973FB23DED43500EF7A26 /* Game.cpp in Sources */,
 				F3D973E523DD9F1C00EF7A26 /* Model.cpp in Sources */,
 				F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */,
 				F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */,
+				F3D47AF723E47178006F2E05 /* InstancingRenderer.cpp in Sources */,
 				F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,32 +1,32 @@
 //
-//  DefaultRenderer.hpp
-//  LearnOpenGL
+//  InstancingRenderer.hpp
+//  GL
 //
-//  Created by Chen.Zr on 2020/1/19.
+//  Created by Chen.Zr on 2020/1/31.
 //  Copyright © 2020 Chen.Zr. All rights reserved.
 //
 
-#ifndef DefaultRenderer_hpp
-#define DefaultRenderer_hpp
+#ifndef InstancingRenderer_hpp
+#define InstancingRenderer_hpp
 
 #include <string>
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Renderer.hpp"
-#include "BaseComponent.hpp"
+#include "Model.hpp"
 
-class DefaultRenderer: public Renderer{
+class InstancingRenderer: public Renderer{
 public:
-    std::string name = "DefaultRenderer";
+    std::string name = "InstancingRenderer";
     
-    DefaultRenderer() = default;
+    InstancingRenderer() = default;
     void render() override;
     void bindModel(Model *model) override;
     void bindCamera(Camera *camera) override;
     void bindShader(Shader *shader) override;
     
-    ~DefaultRenderer(){};
+    ~InstancingRenderer(){};
 };
 
-#endif /* DefaultRenderer_hpp */
+#endif /* InstancingRenderer_hpp */

@@ -12,6 +12,8 @@
 #include <GL/glew.h>
 #include <vector>
 #include <string>
+#include <glm/glm.hpp>
+#include <iostream>
 
 class Model {
     
@@ -30,10 +32,12 @@ public:
     void addData(const std::vector<GLfloat> &vertextPosition,
                  const std::vector<GLfloat> &textureCroods);
 //                 const std::vector<GLint> &indices);
+    void createVAO();
     void bindVAO();
     void deleteData();
     
     void addVBO(int dimensions, const std::vector<GLfloat> &data);
+    void addInstanceVBO(int dimensions, const std::vector<glm::vec3> &data);
     
 private:
     GLuint VAO = 0;

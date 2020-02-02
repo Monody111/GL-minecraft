@@ -6,17 +6,6 @@
 //  Copyright © 2019 Chen.Zr. All rights reserved.
 //
 #include <iostream>
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-#include <vector>
-//#include "Shader/ShaderLoader.hpp"
-//#include "Camera.hpp"
-//#include "Texture.hpp"
-//#include "Model.hpp"
-#include "DefaultRenderer.hpp"
-#include "CubeComponent.hpp"
-//#include "CubeRenderer.hpp"
 #include "GameSetting.hpp"
 #include "Game.hpp"
 

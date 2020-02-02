@@ -13,7 +13,7 @@
 #include "Model.hpp"
 #include "Camera.hpp"
 #include "Shader.hpp"
-#include "BaseComponent.hpp"
+//#include "BaseComponent.hpp"
 
 
 class Renderer {
@@ -21,14 +21,13 @@ class Renderer {
 public:
     
     std::string name;
-    Model *mesh = nullptr;
+    Model *model = nullptr;
     Camera *camera = nullptr;
     Shader *shader = nullptr;
-    BaseComponent *component = nullptr;
     
     Renderer() = default;
     void virtual render() = 0;
-    void virtual bindMesh(BaseComponent *mesh) = 0;
+    void virtual bindModel(Model *model) = 0;
     void virtual bindShader(Shader *shader) = 0;
     void virtual bindCamera(Camera *camera) = 0;
     

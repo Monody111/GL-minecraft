@@ -33,7 +33,7 @@ void Controller::mouse_callback(GLFWwindow *window, double xpos, double ypos){
     lastX = xpos;
     lastY = ypos;
     
-    std::cout << "xoffset = " << xoffset <<", " << "yoffset = " << yoffset <<std::endl;
+//    std::cout << "xoffset = " << xoffset <<", " << "yoffset = " << yoffset <<std::endl;
 //    camera->ProcessMouseMovement(xoffset, yoffset);
 }
 

@@ -8,25 +8,25 @@
 
 #include "Player.hpp"
 
-Player::Player(GameSetting *setting) { 
-    camera = new Camera(glm::vec3(0.0, 0.0, 3.0), setting);
+Player::Player(GameSetting *setting, glm::vec3 spawnPosition) {
+    this -> position = spawnPosition;
+    camera = new Camera(&this -> position, setting);
     controller = new Controller();
 }
 
 void Player::movement(GLfloat deltaTime) {
     if (controller -> keys[GLFW_KEY_W]) {
-        camera->ProcessKeyboard(FORWARD, deltaTime);
+        camera->ProcessMovement(FORWARD, deltaTime);
     }
     if (controller -> keys[GLFW_KEY_S]) {
-        camera->ProcessKeyboard(BACKWARD, deltaTime);
+        camera->ProcessMovement(BACKWARD, deltaTime);
     }
     if (controller -> keys[GLFW_KEY_A]) {
-        camera->ProcessKeyboard(LEFT, deltaTime);
+        camera->ProcessMovement(LEFT, deltaTime);
     }
     if (controller -> keys[GLFW_KEY_D]) {
-        camera->ProcessKeyboard(RIGHT, deltaTime);
+        camera->ProcessMovement(RIGHT, deltaTime);
     };
-    position = camera -> Position;
 }
 
 void Player::view(){
@@ -34,5 +34,17 @@ void Player::view(){
     controller -> xoffset = 0.0f;
     controller -> yoffset = 0.0f;
 }
+
+void Player::verticality(GLfloat deltaTime) {
+    if (controller -> keys[GLFW_KEY_SPACE]) {
+        camera->ProcessVerticality(ABOVE, deltaTime);
+    }
+    if (controller -> keys[GLFW_KEY_LEFT_SHIFT]) {
+        camera->ProcessVerticality(BOTTOM, deltaTime);
+    };
+}
+
+
+
 
 

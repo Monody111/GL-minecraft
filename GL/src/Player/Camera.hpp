@@ -19,13 +19,15 @@ enum Camera_Movement{
     FORWARD,
     BACKWARD,
     LEFT,
-    RIGHT
+    RIGHT,
+    ABOVE,
+    BOTTOM
 };
 
 class Camera{
 public:
     //camera position
-    glm::vec3 Position;
+    glm::vec3 *Position;
     //camera front
     glm::vec3 Front;
     //camera up
@@ -44,19 +46,20 @@ public:
     GLfloat Sensitivity;
     GLfloat fov;
     
-    Camera(glm::vec3 cameraPosition,
+    Camera(glm::vec3 *cameraPosition,
            glm::vec3 WorldUp,
            GLfloat yaw, GLfloat pitch, GameSetting *setting);
     
-    Camera(glm::vec3 cameraPosition, GameSetting *setting);
+    Camera(glm::vec3 *cameraPosition, GameSetting *setting);
     
-    void setCamera(glm::vec3 position, glm::vec3 worldUp, GLfloat yaw, GLfloat pitch,
+    void setCamera(glm::vec3 *cameraPosition, glm::vec3 worldUp, GLfloat yaw, GLfloat pitch,
     GLfloat speed, GLfloat sensitivity, GLfloat fov);
     
     glm::mat4 GetViewMatrix() const;
     glm::mat4 GetPerspectiveMatrix() const;
     
-    void ProcessKeyboard(Camera_Movement direction, GLfloat deltaTime);
+    void ProcessMovement(Camera_Movement direction, GLfloat deltaTime);
+    void ProcessVerticality(Camera_Movement direction, GLfloat deltaTime);
     void ProcessMouseMovement(GLfloat offsetX, GLfloat offsetY);
     void ProcessMouseScroll(GLfloat offsetY);
     

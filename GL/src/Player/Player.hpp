@@ -10,6 +10,7 @@
 #define Player_hpp
 
 #include <glm/glm.hpp>
+#include <glm/gtx/string_cast.hpp>
 #include "Controller.hpp"
 #include "GameSetting.hpp"
 #include "Camera.hpp"
@@ -22,9 +23,10 @@ public:
     Controller *controller = nullptr;
     Camera *camera = nullptr;
     
-    Player(GameSetting *setting);
+    Player(GameSetting *setting, glm::vec3 spawnPosition);
     
     void movement(GLfloat deltaTime);
+    void verticality(GLfloat deltaTime);
     void view();
 };
 
