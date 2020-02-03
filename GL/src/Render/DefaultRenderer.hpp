@@ -27,9 +27,7 @@ public:
                     const std::string &fragShaderName):
     Renderer(vertShaderName, fragShaderName){};
     void render(BasicTexture *t) override;
-    void bindModel(Model *model) override;
-    void bindCamera(Camera *camera) override;
-    
+
     ~DefaultRenderer(){};
 };
 

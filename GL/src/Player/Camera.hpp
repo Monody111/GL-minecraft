@@ -47,13 +47,13 @@ public:
     GLfloat fov;
     
     Camera(glm::vec3 *cameraPosition,
-           glm::vec3 WorldUp,
+           glm::vec3 WorldUp, glm::vec3 front,
            GLfloat yaw, GLfloat pitch, GameSetting *setting);
     
     Camera(glm::vec3 *cameraPosition, GameSetting *setting);
     
-    void setCamera(glm::vec3 *cameraPosition, glm::vec3 worldUp, GLfloat yaw, GLfloat pitch,
-    GLfloat speed, GLfloat sensitivity, GLfloat fov);
+    void setCamera(glm::vec3 *cameraPosition, glm::vec3 worldUp, glm::vec3 front,
+                   GLfloat yaw, GLfloat pitch, GLfloat speed, GLfloat sensitivity, GLfloat fov);
     
     glm::mat4 GetViewMatrix() const;
     glm::mat4 GetPerspectiveMatrix() const;

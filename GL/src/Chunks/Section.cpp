@@ -22,7 +22,6 @@ Section::Section(){
     
     model = new Model();
     model -> createVAO();
-    model -> bindVAO();
     model -> addVBO(3, vertextPosition);
     model -> addVBO(2, textureCroods);
     model -> addInstanceVBO(3, translations);

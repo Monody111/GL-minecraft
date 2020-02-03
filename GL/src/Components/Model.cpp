@@ -52,26 +52,31 @@ void Model::deleteData() {
 
 void Model::addVBO(int dimensions, const std::vector<GLfloat>& data) {
     GLuint VBO;
+    glBindVertexArray(VAO);
     glGenBuffers(1, &VBO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(GLfloat), data.data(), GL_STATIC_DRAW);
     glVertexAttribPointer(VBOCount, dimensions, GL_FLOAT, GL_FALSE, dimensions * sizeof(GLfloat), (GLvoid*)0);
     
-    std::cout << "Debug: " << "add VBO: " << VBO << std::endl;
+    std::cout << "Debug: " << "add VBO: " << VBO << " " << VBOCount << std::endl;
     
     glEnableVertexAttribArray(VBOCount++);
+    glBindVertexArray(0);
     VBOs.push_back(VBO);
 }
 
 void Model::addEBO(const std::vector<GLint> &indices) { 
-    GLuint EBO = 0;
+    GLuint EBO;
+    glBindVertexArray(VAO);
     glGenBuffers(1, &EBO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(GLint), indices.data(), GL_STATIC_DRAW);
+    glBindVertexArray(0);
 }
 
 void Model::addInstanceVBO(int dimensions, const std::vector<glm::vec3> &data) { 
     GLuint instanceVBO;
+    glBindVertexArray(VAO);
     glGenBuffers(1, &instanceVBO);
     glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
     glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(glm::vec3), data.data(), GL_STATIC_DRAW);
@@ -79,9 +84,11 @@ void Model::addInstanceVBO(int dimensions, const std::vector<glm::vec3> &data) {
     
     glVertexAttribDivisor(2, 1);
     
-    std::cout << "Debug: " << "add instance VBO: " << instanceVBO << std::endl;
+    std::cout << "Debug: " << "add instance VBO: " << instanceVBO << " " << VBOCount << std::endl;
     
     glEnableVertexAttribArray(VBOCount++);
+    glBindVertexArray(0);
+    
     VBOs.push_back(instanceVBO);
 }
 

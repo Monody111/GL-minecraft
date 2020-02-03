@@ -27,30 +27,5 @@ void InstancingRenderer::render(BasicTexture *t) {
     shader->Use();
     model->bindVAO();
     glDrawArraysInstanced(GL_TRIANGLES, 0, 36, 256);
+    glBindVertexArray(0);
 }
-
-void InstancingRenderer::bindModel(Model *model){
-    if(model){
-        this-> model = model;
-    }else{
-        throw std::runtime_error("Unable to bind model to render: ");
-    }
-}
-void InstancingRenderer::bindCamera(Camera *camera) {
-    if(camera){
-        this->camera = camera;
-    }else{
-        throw std::runtime_error("Unable to bind camera to render: ");
-    }
-}
-
-//void InstancingRenderer::loadShader(Shader *shader) {
-//    if(shader){
-//        this->shader = shader;
-//    }else{
-//        throw std::runtime_error("Unable to bind shader to render: ");
-//    }
-//}
-
-
-

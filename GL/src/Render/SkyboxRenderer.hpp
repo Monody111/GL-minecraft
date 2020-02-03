@@ -9,11 +9,70 @@
 #ifndef SkyboxRenderer_hpp
 #define SkyboxRenderer_hpp
 
-#include <Renderer.hpp>
+#include <string>
+#include <vector>
+#include <glm/gtc/type_ptr.hpp>
+
+#include "Renderer.hpp"
+#include "CubeTexture.hpp"
 
 class SkyboxRenderer: public Renderer{
-public:
+    public:
+        std::string name = "CubeRenderer";
+        CubeTexture *cubetexture = nullptr;
+        
+        GLfloat SIZE = 500.0f;
+        std::vector<GLfloat> vertextPosition{
+            -SIZE,  SIZE, -SIZE,
+            -SIZE, -SIZE, -SIZE,
+             SIZE, -SIZE, -SIZE,
+             SIZE, -SIZE, -SIZE,
+             SIZE,  SIZE, -SIZE,
+            -SIZE,  SIZE, -SIZE,
+
+            -SIZE, -SIZE,  SIZE,
+            -SIZE, -SIZE, -SIZE,
+            -SIZE,  SIZE, -SIZE,
+            -SIZE,  SIZE, -SIZE,
+            -SIZE,  SIZE,  SIZE,
+            -SIZE, -SIZE,  SIZE,
+
+             SIZE, -SIZE, -SIZE,
+             SIZE, -SIZE,  SIZE,
+             SIZE,  SIZE,  SIZE,
+             SIZE,  SIZE,  SIZE,
+             SIZE,  SIZE, -SIZE,
+             SIZE, -SIZE, -SIZE,
+
+            -SIZE, -SIZE,  SIZE,
+            -SIZE,  SIZE,  SIZE,
+             SIZE,  SIZE,  SIZE,
+             SIZE,  SIZE,  SIZE,
+             SIZE, -SIZE,  SIZE,
+            -SIZE, -SIZE,  SIZE,
+
+            -SIZE,  SIZE, -SIZE,
+             SIZE,  SIZE, -SIZE,
+             SIZE,  SIZE,  SIZE,
+             SIZE,  SIZE,  SIZE,
+            -SIZE,  SIZE,  SIZE,
+            -SIZE,  SIZE, -SIZE,
+
+            -SIZE, -SIZE, -SIZE,
+            -SIZE, -SIZE,  SIZE,
+             SIZE, -SIZE, -SIZE,
+             SIZE, -SIZE, -SIZE,
+            -SIZE, -SIZE,  SIZE,
+             SIZE, -SIZE,  SIZE
+        };
+        
+        SkyboxRenderer(const std::string &vertShaderName,
+                       const std::string &fragShaderName);
+        void loadModel();
+        void loadTexture();
+        void renderSky();
     
+        void render(BasicTexture *t) override;
 };
 
-#endif /* SkyboxRenderer_hpp */
+#endif /*enderer_hpp */

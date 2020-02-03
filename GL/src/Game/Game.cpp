@@ -10,16 +10,23 @@
 
 void Game::runLoop() {
     while (!glfwWindowShouldClose(window)) {
+        
         GLfloat currentTime = glfwGetTime();
         GLfloat deltaTime = currentTime - lastTime;
         lastTime = currentTime;
+        
         glfwPollEvents();
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glClearColor(0.0, 0.0f, 0.0f, 1.0);
+        
         player -> movement(deltaTime);
         player -> view();
         player -> verticality(deltaTime);
+        
+        glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        
+        skyboxRenderer -> renderSky();
         renderer->render(this -> texture);
+        
         glfwSwapBuffers(window);
     }
     glfwTerminate();
@@ -36,16 +43,23 @@ Game::Game(GameSetting *setting){
     loadWindow();
     glewExperimental = GL_TRUE;
     glewInit();
-    texture = new BasicTexture("test.png");
 }
 
 void Game::loadRenderer() {
+    
+    
+    skyboxRenderer = new SkyboxRenderer("SkyBoxVertShader.glsl",
+                                        "SkyBoxFragShader.glsl");
+    skyboxRenderer -> bindCamera(player -> camera);
+    
     Section *s = new Section();
     
     renderer = new InstancingRenderer("instancingShader.glsl",
                                       "FragShader.glsl");
     renderer -> bindCamera(player -> camera);
     renderer -> bindModel(s -> model);
+    
+    texture = new BasicTexture("Test.png");
 }
 
 void Game::loadWindow() {
@@ -72,7 +86,7 @@ void Game::loadWindow() {
     
 //    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glEnable(GL_DEPTH_TEST);
-    glCullFace(GL_BACK);
+//    glCullFace(GL_BACK);
 }
 
 

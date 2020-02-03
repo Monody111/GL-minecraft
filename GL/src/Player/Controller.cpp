@@ -27,8 +27,8 @@ void Controller::mouse_callback(GLFWwindow *window, double xpos, double ypos){
         lastY = ypos;
         firstMouse = false;
     }
-    xoffset = lastX - xpos;
-    yoffset = ypos - lastY;
+    xoffset = xpos - lastX;
+    yoffset = lastY - ypos;
 
     lastX = xpos;
     lastY = ypos;

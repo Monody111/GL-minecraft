@@ -31,7 +31,7 @@ void BasicTexture::bindTexture() const {
 
 void BasicTexture::loadFromImage(Image image) {
     glGenTextures(1, &textureID);
-    glActiveTexture(GL_TEXTURE0);
+//    glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, textureID);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA,
                  image.width, image.height, 0,
@@ -43,6 +43,7 @@ void BasicTexture::loadFromImage(Image image) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, 1);
+    glBindTexture(GL_TEXTURE_2D, 0);
 }
 
 BasicTexture::~BasicTexture() {

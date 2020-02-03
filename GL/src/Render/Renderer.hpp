@@ -30,8 +30,22 @@ public:
         loadShader(vertShaderName, fragShaderName);
     }
     void virtual render(BasicTexture *t) = 0;
-    void virtual bindModel(Model *model) = 0;
-    void virtual bindCamera(Camera *camera) = 0;
+    
+    void bindModel(Model *model) {
+        if(model){
+            this->model = model;
+        }else{
+            throw std::runtime_error("Unable to bind model to render: ");
+        }
+    }
+    
+    void bindCamera(Camera *camera){
+        if(camera){
+            this->camera = camera;
+        }else{
+            throw std::runtime_error("Unable to bind camera to render: ");
+        }
+    }
     
     void loadShader(const std::string &vertShaderName,
                     const std::string &fragShaderName){

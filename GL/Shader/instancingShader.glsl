@@ -6,7 +6,6 @@ layout(location=2) in vec3 offset;
 
 out vec2 TexCoord;
 
-//uniform mat4x4 model;
 uniform mat4x4 view;
 uniform mat4x4 projection;
 

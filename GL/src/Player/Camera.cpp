@@ -9,15 +9,17 @@
 
 #include "Camera.hpp"
 
-Camera::Camera(glm::vec3 *cameraPosition, glm::vec3 worldUp,
+Camera::Camera(glm::vec3 *cameraPosition, glm::vec3 worldUp, glm::vec3 front,
                GLfloat yaw, GLfloat pitch, GameSetting *setting){
-    setCamera(cameraPosition, worldUp, yaw, pitch, setting -> speed, setting -> sensitivity, setting -> fov);
+    setCamera(cameraPosition, worldUp, front,
+              yaw, pitch, setting -> speed, setting -> sensitivity, setting -> fov);
     this -> setting = setting;
 }
 
 Camera::Camera(glm::vec3 *cameraPosition, GameSetting *setting){
     setCamera(cameraPosition,
               glm::vec3(0.0,1.0,0.0),
+              glm::vec3(0.0,0.0,-1.0),
               -90.0f, 0.0f,
               setting -> speed,
               setting -> sensitivity,
@@ -26,8 +28,8 @@ Camera::Camera(glm::vec3 *cameraPosition, GameSetting *setting){
     this -> setting = setting;
 }
 
-void Camera::setCamera(glm::vec3 *cameraPosition, glm::vec3 worldUp, GLfloat yaw, GLfloat pitch,
-                       GLfloat speed, GLfloat sensitivity, GLfloat fov) {
+void Camera::setCamera(glm::vec3 *cameraPosition, glm::vec3 worldUp, glm::vec3 front,
+                       GLfloat yaw, GLfloat pitch, GLfloat speed, GLfloat sensitivity, GLfloat fov) {
     this -> Position = cameraPosition;
     this -> WorldUp = worldUp;
     
@@ -54,10 +56,10 @@ void Camera::ProcessMovement(Camera_Movement direction, GLfloat deltaTime) {
         *this->Position -= this->Front * velocity;
     }
     if (direction == RIGHT) {
-        *this->Position -= this->Right * velocity;
+        *this->Position += this->Right * velocity;
     }
     if (direction == LEFT) {
-        *this->Position += this->Right * velocity;
+        *this->Position -= this->Right * velocity;
     }
     Position->y = y;
 }

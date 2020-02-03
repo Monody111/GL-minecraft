@@ -13,6 +13,7 @@
 		F3D47AFF23E6DA44006F2E05 /* BasicTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AFD23E6DA44006F2E05 /* BasicTexture.cpp */; };
 		F3D47B4623E8240F006F2E05 /* CubeTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B4423E8240F006F2E05 /* CubeTexture.cpp */; };
 		F3D47B4923E824A3006F2E05 /* SkyboxRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B4723E824A3006F2E05 /* SkyboxRenderer.cpp */; };
+		F3D47B5823E89E16006F2E05 /* FPPCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B5623E89E16006F2E05 /* FPPCamera.cpp */; };
 		F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973B523DD9F0200EF7A26 /* main.cpp */; };
 		F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */; };
 		F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */; };
@@ -77,6 +78,18 @@
 		F3D47B4523E8240F006F2E05 /* CubeTexture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CubeTexture.hpp; sourceTree = "<group>"; };
 		F3D47B4723E824A3006F2E05 /* SkyboxRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SkyboxRenderer.cpp; sourceTree = "<group>"; };
 		F3D47B4823E824A3006F2E05 /* SkyboxRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SkyboxRenderer.hpp; sourceTree = "<group>"; };
+		F3D47B4A23E828EA006F2E05 /* wg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wg.jpg; sourceTree = "<group>"; };
+		F3D47B4C23E83488006F2E05 /* bottom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bottom.jpg; sourceTree = "<group>"; };
+		F3D47B4D23E83488006F2E05 /* left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = left.jpg; sourceTree = "<group>"; };
+		F3D47B4E23E83488006F2E05 /* top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = top.jpg; sourceTree = "<group>"; };
+		F3D47B4F23E83488006F2E05 /* back.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = back.jpg; sourceTree = "<group>"; };
+		F3D47B5023E83488006F2E05 /* right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = right.jpg; sourceTree = "<group>"; };
+		F3D47B5123E83488006F2E05 /* front.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = front.jpg; sourceTree = "<group>"; };
+		F3D47B5223E8350D006F2E05 /* SkyBoxVertShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = SkyBoxVertShader.glsl; sourceTree = "<group>"; };
+		F3D47B5423E83536006F2E05 /* SkyBoxFragShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = SkyBoxFragShader.glsl; sourceTree = "<group>"; };
+		F3D47B5523E888F1006F2E05 /* wg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wg.jpg; sourceTree = "<group>"; };
+		F3D47B5623E89E16006F2E05 /* FPPCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FPPCamera.cpp; sourceTree = "<group>"; };
+		F3D47B5723E89E16006F2E05 /* FPPCamera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FPPCamera.hpp; sourceTree = "<group>"; };
 		F3D973B223DD9F0200EF7A26 /* GL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GL; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D973B523DD9F0200EF7A26 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -139,6 +152,20 @@
 				F3D47B4523E8240F006F2E05 /* CubeTexture.hpp */,
 			);
 			path = Texture;
+			sourceTree = "<group>";
+		};
+		F3D47B4B23E83488006F2E05 /* skybox */ = {
+			isa = PBXGroup;
+			children = (
+				F3D47B5523E888F1006F2E05 /* wg.jpg */,
+				F3D47B4C23E83488006F2E05 /* bottom.jpg */,
+				F3D47B4D23E83488006F2E05 /* left.jpg */,
+				F3D47B4E23E83488006F2E05 /* top.jpg */,
+				F3D47B4F23E83488006F2E05 /* back.jpg */,
+				F3D47B5023E83488006F2E05 /* right.jpg */,
+				F3D47B5123E83488006F2E05 /* front.jpg */,
+			);
+			path = skybox;
 			sourceTree = "<group>";
 		};
 		F3D973A923DD9F0200EF7A26 = {
@@ -243,6 +270,8 @@
 		F3D973D923DD9F1C00EF7A26 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				F3D47B4B23E83488006F2E05 /* skybox */,
+				F3D47B4A23E828EA006F2E05 /* wg.jpg */,
 				F3D973DA23DD9F1C00EF7A26 /* Test.png */,
 			);
 			path = Textures;
@@ -255,6 +284,8 @@
 				F3D973DD23DD9F1C00EF7A26 /* FragShader.glsl */,
 				F3D973DE23DD9F1C00EF7A26 /* VertShader.glsl */,
 				F3D47AF823E47244006F2E05 /* instancingShader.glsl */,
+				F3D47B5223E8350D006F2E05 /* SkyBoxVertShader.glsl */,
+				F3D47B5423E83536006F2E05 /* SkyBoxFragShader.glsl */,
 			);
 			path = Shader;
 			sourceTree = "<group>";
@@ -290,6 +321,8 @@
 				F3D973D523DD9F1C00EF7A26 /* Camera.hpp */,
 				F3D973FF23DEFC9400EF7A26 /* Player.cpp */,
 				F3D9740023DEFC9400EF7A26 /* Player.hpp */,
+				F3D47B5623E89E16006F2E05 /* FPPCamera.cpp */,
+				F3D47B5723E89E16006F2E05 /* FPPCamera.hpp */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -367,6 +400,7 @@
 				F3D47B4623E8240F006F2E05 /* CubeTexture.cpp in Sources */,
 				F3D47AFF23E6DA44006F2E05 /* BasicTexture.cpp in Sources */,
 				F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */,
+				F3D47B5823E89E16006F2E05 /* FPPCamera.cpp in Sources */,
 				F3D9741023DF2B7100EF7A26 /* Chunk.cpp in Sources */,
 				F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */,
 				F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */,

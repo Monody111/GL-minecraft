@@ -27,27 +27,5 @@ void DefaultRenderer::render(BasicTexture *t) {
     glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 
-void DefaultRenderer::bindModel(Model *model) {
-    if(model){
-        this->model = model;
-    }else{
-        throw std::runtime_error("Unable to bind model to render: ");
-    }
-}
-void DefaultRenderer::bindCamera(Camera *camera) {
-    if(camera){
-        this->camera = camera;
-    }else{
-        throw std::runtime_error("Unable to bind camera to render: ");
-    }
-}
-
-//void DefaultRenderer::loadShader(Shader *shader) {
-//    if(shader){
-//        this->shader = shader;
-//    }else{
-//        throw std::runtime_error("Unable to bind shader to render: ");
-//    }
-//}
 
 
