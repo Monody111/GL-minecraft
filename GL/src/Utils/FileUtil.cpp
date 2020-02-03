@@ -18,7 +18,7 @@ string getFileContents(const string &filePath){
         Contents << file.rdbuf();
         file.close();
     } catch (ifstream::failure e) {
-        cout << "ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ" << endl;
+        throw std::runtime_error("ERROR::SHADER::FILE_NOT_SUCCESFULLY_READ");
     }
     
     return Contents.str();

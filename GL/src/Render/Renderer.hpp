@@ -13,7 +13,7 @@
 #include "Model.hpp"
 #include "Camera.hpp"
 #include "Shader.hpp"
-//#include "BaseComponent.hpp"
+#include "BasicTexture.hpp"
 
 
 class Renderer {
@@ -25,11 +25,19 @@ public:
     Camera *camera = nullptr;
     Shader *shader = nullptr;
     
-    Renderer() = default;
-    void virtual render() = 0;
+    Renderer(const std::string &vertShaderName,
+             const std::string &fragShaderName){
+        loadShader(vertShaderName, fragShaderName);
+    }
+    void virtual render(BasicTexture *t) = 0;
     void virtual bindModel(Model *model) = 0;
-    void virtual bindShader(Shader *shader) = 0;
     void virtual bindCamera(Camera *camera) = 0;
+    
+    void loadShader(const std::string &vertShaderName,
+                    const std::string &fragShaderName){
+        shader = new Shader("Shader/" + vertShaderName,
+                            "Shader/" + fragShaderName);
+    }
     
     virtual ~Renderer(){};
 };

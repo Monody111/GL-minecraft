@@ -19,7 +19,7 @@ void Game::runLoop() {
         player -> movement(deltaTime);
         player -> view();
         player -> verticality(deltaTime);
-        renderer->render();
+        renderer->render(this -> texture);
         glfwSwapBuffers(window);
     }
     glfwTerminate();
@@ -36,19 +36,14 @@ Game::Game(GameSetting *setting){
     loadWindow();
     glewExperimental = GL_TRUE;
     glewInit();
+    texture = new BasicTexture("test.png");
 }
 
 void Game::loadRenderer() {
-    Shader *shader =
-    new Shader ("/Users/chen.zr/workspace/GL/GL/GL/Shader/instancingShader.glsl",
-                "/Users/chen.zr/workspace/GL/GL/GL/Shader/FragShader.glsl");
-    
-//    CubeComponent *mesh = new CubeComponent();
-    
     Section *s = new Section();
     
-    renderer = new InstancingRenderer();
-    renderer -> bindShader(shader);
+    renderer = new InstancingRenderer("instancingShader.glsl",
+                                      "FragShader.glsl");
     renderer -> bindCamera(player -> camera);
     renderer -> bindModel(s -> model);
 }
@@ -75,7 +70,7 @@ void Game::loadWindow() {
     
     glViewport(0, 0, setting->width, setting->height);
     
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glEnable(GL_DEPTH_TEST);
     glCullFace(GL_BACK);
 }

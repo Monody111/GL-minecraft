@@ -15,16 +15,18 @@
 
 #include "Renderer.hpp"
 #include "Model.hpp"
+#include "BasicTexture.hpp"
 
 class InstancingRenderer: public Renderer{
 public:
     std::string name = "InstancingRenderer";
     
-    InstancingRenderer() = default;
-    void render() override;
+    InstancingRenderer(const std::string &vertShaderName,
+                       const std::string &fragShaderName):
+    Renderer(vertShaderName, fragShaderName){};
+    void render(BasicTexture *t) override;
     void bindModel(Model *model) override;
     void bindCamera(Camera *camera) override;
-    void bindShader(Shader *shader) override;
     
     ~InstancingRenderer(){};
 };

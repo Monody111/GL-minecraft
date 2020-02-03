@@ -8,7 +8,7 @@
 
 #include "InstancingRenderer.hpp"
 
-void InstancingRenderer::render() {
+void InstancingRenderer::render(BasicTexture *t) {
     
     glm::mat4 viewMat4 = camera -> GetViewMatrix();
 //    glm::mat4 modelMat4 = glm::translate(glm::mat4(1.0), component -> position);
@@ -22,6 +22,8 @@ void InstancingRenderer::render() {
     glUniformMatrix4fv(viewlLoc, 1, GL_FALSE, glm::value_ptr(viewMat4));
     glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projectionMat4));
     
+    t -> bindTexture();
+    
     shader->Use();
     model->bindVAO();
     glDrawArraysInstanced(GL_TRIANGLES, 0, 36, 256);
@@ -31,24 +33,24 @@ void InstancingRenderer::bindModel(Model *model){
     if(model){
         this-> model = model;
     }else{
-        std::cout << "invaild pointer mesh" << std::endl;
+        throw std::runtime_error("Unable to bind model to render: ");
     }
 }
 void InstancingRenderer::bindCamera(Camera *camera) {
     if(camera){
         this->camera = camera;
     }else{
-        std::cout << "invaild pointer camera" << std::endl;
+        throw std::runtime_error("Unable to bind camera to render: ");
     }
 }
 
-void InstancingRenderer::bindShader(Shader *shader) {
-    if(shader){
-        this->shader = shader;
-    }else{
-        std::cout << "invaild pointer shader" << std::endl;
-    }
-}
+//void InstancingRenderer::loadShader(Shader *shader) {
+//    if(shader){
+//        this->shader = shader;
+//    }else{
+//        throw std::runtime_error("Unable to bind shader to render: ");
+//    }
+//}
 
 
 

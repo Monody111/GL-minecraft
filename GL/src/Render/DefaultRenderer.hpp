@@ -12,19 +12,23 @@
 #include <string>
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <iostream>
 
 #include "Renderer.hpp"
 #include "BaseComponent.hpp"
+#include "BasicTexture.hpp"
+#include "Camera.hpp"
 
 class DefaultRenderer: public Renderer{
 public:
     std::string name = "DefaultRenderer";
     
-    DefaultRenderer() = default;
-    void render() override;
+    DefaultRenderer(const std::string &vertShaderName,
+                    const std::string &fragShaderName):
+    Renderer(vertShaderName, fragShaderName){};
+    void render(BasicTexture *t) override;
     void bindModel(Model *model) override;
     void bindCamera(Camera *camera) override;
-    void bindShader(Shader *shader) override;
     
     ~DefaultRenderer(){};
 };

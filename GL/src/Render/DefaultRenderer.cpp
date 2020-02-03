@@ -8,7 +8,7 @@
 
 #include "DefaultRenderer.hpp"
 
-void DefaultRenderer::render() {
+void DefaultRenderer::render(BasicTexture *t) {
     
     glm::mat4 viewMat4 = camera -> GetViewMatrix();
 //    glm::mat4 modelMat4 = glm::translate(glm::mat4(1.0), component -> position);
@@ -31,23 +31,23 @@ void DefaultRenderer::bindModel(Model *model) {
     if(model){
         this->model = model;
     }else{
-        std::cout << "invaild pointer mesh" << std::endl;
+        throw std::runtime_error("Unable to bind model to render: ");
     }
 }
 void DefaultRenderer::bindCamera(Camera *camera) {
     if(camera){
         this->camera = camera;
     }else{
-        std::cout << "invaild pointer camera" << std::endl;
+        throw std::runtime_error("Unable to bind camera to render: ");
     }
 }
 
-void DefaultRenderer::bindShader(Shader *shader) {
-    if(shader){
-        this->shader = shader;
-    }else{
-        std::cout << "invaild pointer shader" << std::endl;
-    }
-}
+//void DefaultRenderer::loadShader(Shader *shader) {
+//    if(shader){
+//        this->shader = shader;
+//    }else{
+//        throw std::runtime_error("Unable to bind shader to render: ");
+//    }
+//}
 
 

@@ -21,8 +21,7 @@ public:
         if(model){
             return model;
         }else{
-            std::cout << "invalid model pointer" << std::endl;
-            abort();
+            throw std::runtime_error("invalid model pointer");
         }
     }
     virtual ~BaseComponent(){};

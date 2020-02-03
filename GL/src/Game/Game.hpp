@@ -19,7 +19,7 @@
 #include "Player.hpp"
 #include "InstancingRenderer.hpp"
 #include "Section.hpp"
-
+#include "BasicTexture.hpp"
 class Game {
     
 public:
@@ -30,6 +30,8 @@ public:
     GLfloat lastTime = 0.0;
     GLfloat currentTime = 0.0;
     Player *player = nullptr;
+    
+    BasicTexture *texture = nullptr;
     
     Game(GameSetting *setting);
     
