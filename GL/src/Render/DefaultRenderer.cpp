@@ -10,9 +10,9 @@
 
 void DefaultRenderer::render(BasicTexture *t) {
     
-    glm::mat4 viewMat4 = camera -> GetViewMatrix();
+    glm::mat4 viewMat4 = camera -> getViewMatrix();
 //    glm::mat4 modelMat4 = glm::translate(glm::mat4(1.0), component -> position);
-    glm::mat4 projectionMat4 = camera -> GetPerspectiveMatrix();
+    glm::mat4 projectionMat4 = camera -> getPerspectiveMatrix();
     
 //    GLint modelLoc = glGetUniformLocation(shader->program, "model");
     GLint viewlLoc = glGetUniformLocation(shader->program, "view");

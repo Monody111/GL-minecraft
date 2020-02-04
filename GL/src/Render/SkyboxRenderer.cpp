@@ -18,9 +18,9 @@ SkyboxRenderer::SkyboxRenderer(const std::string &vertShaderName,
                                }
 
 void SkyboxRenderer::renderSky() {
-    glm::mat4 viewMat4 = camera -> GetViewMatrix();
+    glm::mat4 viewMat4 = camera -> getViewMatrix();
 //    glm::mat4 viewMat4 = glm::mat4(glm::mat3(camera -> GetViewMatrix()));
-    glm::mat4 projectionMat4 = camera -> GetPerspectiveMatrix();
+    glm::mat4 projectionMat4 = camera -> getPerspectiveMatrix();
     
     GLint viewlLoc = glGetUniformLocation(shader->program, "view");
     GLint projectionLoc = glGetUniformLocation(shader->program, "projection");

@@ -10,7 +10,7 @@
 
 Player::Player(GameSetting *setting, glm::vec3 spawnPosition) {
     this -> position = spawnPosition;
-    camera = new Camera(&this -> position, setting);
+    camera = new Camera(this -> position, setting);
     controller = new Controller();
 }
 
