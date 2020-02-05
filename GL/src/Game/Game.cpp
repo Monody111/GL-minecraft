@@ -49,7 +49,7 @@ void Game::loadRenderer() {
     
     
     skyboxRenderer = new SkyboxRenderer("SkyBoxVertShader.glsl",
-                                        "SkyBoxFragShader.glsl");
+                                        "SkyBoxFrag.glsl");
     skyboxRenderer -> bindCamera(player -> camera);
     
     Section *s = new Section();

@@ -21,7 +21,7 @@ class SkyboxRenderer: public Renderer{
         std::string name = "CubeRenderer";
         CubeTexture *cubetexture = nullptr;
         
-        GLfloat SIZE = 500.0f;
+        GLfloat SIZE = 1;
         std::vector<GLfloat> vertextPosition{
             -SIZE,  SIZE, -SIZE,
             -SIZE, -SIZE, -SIZE,

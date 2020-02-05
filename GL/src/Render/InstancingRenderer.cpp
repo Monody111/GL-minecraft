@@ -9,7 +9,7 @@
 #include "InstancingRenderer.hpp"
 
 void InstancingRenderer::render(BasicTexture *t) {
-    
+    shader->Use();
     glm::mat4 viewMat4 = camera -> getViewMatrix();
 //    glm::mat4 modelMat4 = glm::translate(glm::mat4(1.0), component -> position);
     glm::mat4 projectionMat4 = camera -> getPerspectiveMatrix();
@@ -24,7 +24,7 @@ void InstancingRenderer::render(BasicTexture *t) {
     
     t -> bindTexture();
     
-    shader->Use();
+
     model->bindVAO();
     glDrawArraysInstanced(GL_TRIANGLES, 0, 36, 256);
     glBindVertexArray(0);

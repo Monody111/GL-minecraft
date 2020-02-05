@@ -18,7 +18,12 @@ SkyboxRenderer::SkyboxRenderer(const std::string &vertShaderName,
                                }
 
 void SkyboxRenderer::renderSky() {
+    glDepthMask(GL_FALSE);
+    shader -> Use();
     glm::mat4 viewMat4 = camera -> getViewMatrix();
+    viewMat4[3][0] = 0;
+    viewMat4[3][1] = 0;
+    viewMat4[3][2] = 0;
 //    glm::mat4 viewMat4 = glm::mat4(glm::mat3(camera -> GetViewMatrix()));
     glm::mat4 projectionMat4 = camera -> getPerspectiveMatrix();
     
@@ -27,10 +32,9 @@ void SkyboxRenderer::renderSky() {
     
     glUniformMatrix4fv(viewlLoc, 1, GL_FALSE, glm::value_ptr(viewMat4));
     glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projectionMat4));
-
-    glDepthMask(GL_FALSE);
-    shader -> Use();
+    
     model -> bindVAO();
+    
     glActiveTexture(GL_TEXTURE0);
     glUniform1i(glGetUniformLocation(shader -> program, "skybox"), 0);
     cubetexture -> bindTexture();
