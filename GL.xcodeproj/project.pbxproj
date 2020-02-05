@@ -86,10 +86,10 @@
 		F3D47B5023E83488006F2E05 /* right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = right.jpg; sourceTree = "<group>"; };
 		F3D47B5123E83488006F2E05 /* front.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = front.jpg; sourceTree = "<group>"; };
 		F3D47B5223E8350D006F2E05 /* SkyBoxVertShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = SkyBoxVertShader.glsl; sourceTree = "<group>"; };
-		F3D47B5423E83536006F2E05 /* SkyBoxFragShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = SkyBoxFragShader.glsl; sourceTree = "<group>"; };
 		F3D47B5523E888F1006F2E05 /* wg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wg.jpg; sourceTree = "<group>"; };
 		F3D47B5623E89E16006F2E05 /* FPPCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FPPCamera.cpp; sourceTree = "<group>"; };
 		F3D47B5723E89E16006F2E05 /* FPPCamera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FPPCamera.hpp; sourceTree = "<group>"; };
+		F3D47B5B23EA3D69006F2E05 /* SkyBoxFrag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SkyBoxFrag.glsl; sourceTree = "<group>"; };
 		F3D973B223DD9F0200EF7A26 /* GL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GL; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D973B523DD9F0200EF7A26 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -280,12 +280,12 @@
 		F3D973DB23DD9F1C00EF7A26 /* Shader */ = {
 			isa = PBXGroup;
 			children = (
+				F3D47B5B23EA3D69006F2E05 /* SkyBoxFrag.glsl */,
 				F3D973DC23DD9F1C00EF7A26 /* LightFragShader.glsl */,
 				F3D973DD23DD9F1C00EF7A26 /* FragShader.glsl */,
 				F3D973DE23DD9F1C00EF7A26 /* VertShader.glsl */,
 				F3D47AF823E47244006F2E05 /* instancingShader.glsl */,
 				F3D47B5223E8350D006F2E05 /* SkyBoxVertShader.glsl */,
-				F3D47B5423E83536006F2E05 /* SkyBoxFragShader.glsl */,
 			);
 			path = Shader;
 			sourceTree = "<group>";
