@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F34BB77B23EADDBE00643B09 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */; };
 		F34BB77C23EADDBE00643B09 /* libfreetype.6.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		F34BB77F23EBEAD300643B09 /* PlayerRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F34BB77D23EBEAD300643B09 /* PlayerRenderer.cpp */; };
+		F34BB78223EBEB7900643B09 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F34BB78023EBEB7900643B09 /* Mesh.cpp */; };
 		F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF223E19EFF006F2E05 /* Timer.cpp */; };
 		F3D47AF723E47178006F2E05 /* InstancingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF523E47178006F2E05 /* InstancingRenderer.cpp */; };
 		F3D47AFB23E47818006F2E05 /* Section.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF923E47818006F2E05 /* Section.cpp */; };
@@ -69,7 +71,13 @@
 /* Begin PBXFileReference section */
 		F34BB77823EACE3000643B09 /* WeiRuanYaHei-1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WeiRuanYaHei-1.ttf"; sourceTree = "<group>"; };
 		F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = ../../../../../usr/local/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
-		F3D47AF023E05DFD006F2E05 /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
+		F34BB77D23EBEAD300643B09 /* PlayerRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerRenderer.cpp; sourceTree = "<group>"; };
+		F34BB77E23EBEAD300643B09 /* PlayerRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlayerRenderer.hpp; sourceTree = "<group>"; };
+		F34BB78023EBEB7900643B09 /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		F34BB78123EBEB7900643B09 /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
+		F3BB13B523EC3B4100A5C71D /* minecraft-steve.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "minecraft-steve.mtl"; sourceTree = "<group>"; };
+		F3BB13B623EC3B4100A5C71D /* Steve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Steve.png; sourceTree = "<group>"; };
+		F3BB13B723EC3B4100A5C71D /* minecraft-steve.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "minecraft-steve.obj"; sourceTree = "<group>"; };
 		F3D47AF223E19EFF006F2E05 /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		F3D47AF323E19EFF006F2E05 /* Timer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Timer.hpp; sourceTree = "<group>"; };
 		F3D47AF523E47178006F2E05 /* InstancingRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InstancingRenderer.cpp; sourceTree = "<group>"; };
@@ -155,6 +163,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F3BB13B323EC3AC800A5C71D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3BB13B523EC3B4100A5C71D /* minecraft-steve.mtl */,
+				F3BB13B723EC3B4100A5C71D /* minecraft-steve.obj */,
+				F3BB13B623EC3B4100A5C71D /* Steve.png */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F3D47AFC23E6D8B9006F2E05 /* Texture */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,7 +244,7 @@
 				F3D9740323DF185600EF7A26 /* Player */,
 				F3D973BF23DD9F1C00EF7A26 /* Render */,
 				F3D973C523DD9F1C00EF7A26 /* Utils */,
-				F3D973C823DD9F1C00EF7A26 /* Components */,
+				F3D973C823DD9F1C00EF7A26 /* Model */,
 				F3D973D023DD9F1C00EF7A26 /* Shader */,
 			);
 			path = src;
@@ -244,6 +262,8 @@
 				F3D47B4823E824A3006F2E05 /* SkyboxRenderer.hpp */,
 				F3D47B6523EA8CBA006F2E05 /* TextRenderer.cpp */,
 				F3D47B6623EA8CBA006F2E05 /* TextRenderer.hpp */,
+				F34BB77D23EBEAD300643B09 /* PlayerRenderer.cpp */,
+				F34BB77E23EBEAD300643B09 /* PlayerRenderer.hpp */,
 			);
 			path = Render;
 			sourceTree = "<group>";
@@ -260,15 +280,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		F3D973C823DD9F1C00EF7A26 /* Components */ = {
+		F3D973C823DD9F1C00EF7A26 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				F3D973C923DD9F1C00EF7A26 /* BaseComponent.hpp */,
 				F3D973CD23DD9F1C00EF7A26 /* CubeComponent.hpp */,
 				F3D973CE23DD9F1C00EF7A26 /* Model.cpp */,
 				F3D973CB23DD9F1C00EF7A26 /* Model.hpp */,
+				F34BB78023EBEB7900643B09 /* Mesh.cpp */,
+				F34BB78123EBEB7900643B09 /* Mesh.hpp */,
 			);
-			path = Components;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F3D973D023DD9F1C00EF7A26 /* Shader */ = {
@@ -285,6 +307,7 @@
 		F3D973D823DD9F1C00EF7A26 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				F3BB13B323EC3AC800A5C71D /* Model */,
 				F3D47B6B23EAA189006F2E05 /* Fonts */,
 				F3D973D923DD9F1C00EF7A26 /* Textures */,
 			);
@@ -359,7 +382,6 @@
 			children = (
 				F3D9740E23DF2B7100EF7A26 /* Chunk.cpp */,
 				F3D9740F23DF2B7100EF7A26 /* Chunk.hpp */,
-				F3D47AF023E05DFD006F2E05 /* Mesh.hpp */,
 				F3D47AF923E47818006F2E05 /* Section.cpp */,
 				F3D47AFA23E47818006F2E05 /* Section.hpp */,
 			);
@@ -427,10 +449,12 @@
 				F3D47B4623E8240F006F2E05 /* CubeTexture.cpp in Sources */,
 				F3D47AFF23E6DA44006F2E05 /* BasicTexture.cpp in Sources */,
 				F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */,
+				F34BB78223EBEB7900643B09 /* Mesh.cpp in Sources */,
 				F3D47B5823E89E16006F2E05 /* FPPCamera.cpp in Sources */,
 				F3D9741023DF2B7100EF7A26 /* Chunk.cpp in Sources */,
 				F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */,
 				F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */,
+				F34BB77F23EBEAD300643B09 /* PlayerRenderer.cpp in Sources */,
 				F3D47B4923E824A3006F2E05 /* SkyboxRenderer.cpp in Sources */,
 				F3D973E323DD9F1C00EF7A26 /* FileUtil.cpp in Sources */,
 				F3D47AFB23E47818006F2E05 /* Section.cpp in Sources */,
