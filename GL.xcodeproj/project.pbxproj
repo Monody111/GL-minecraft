@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F34BB77B23EADDBE00643B09 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */; };
+		F34BB77C23EADDBE00643B09 /* libfreetype.6.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF223E19EFF006F2E05 /* Timer.cpp */; };
 		F3D47AF723E47178006F2E05 /* InstancingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF523E47178006F2E05 /* InstancingRenderer.cpp */; };
 		F3D47AFB23E47818006F2E05 /* Section.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF923E47818006F2E05 /* Section.cpp */; };
@@ -14,6 +16,7 @@
 		F3D47B4623E8240F006F2E05 /* CubeTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B4423E8240F006F2E05 /* CubeTexture.cpp */; };
 		F3D47B4923E824A3006F2E05 /* SkyboxRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B4723E824A3006F2E05 /* SkyboxRenderer.cpp */; };
 		F3D47B5823E89E16006F2E05 /* FPPCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B5623E89E16006F2E05 /* FPPCamera.cpp */; };
+		F3D47B6723EA8CBA006F2E05 /* TextRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B6523EA8CBA006F2E05 /* TextRenderer.cpp */; };
 		F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973B523DD9F0200EF7A26 /* main.cpp */; };
 		F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */; };
 		F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */; };
@@ -54,6 +57,7 @@
 			files = (
 				F3D973F423DDA16900EF7A26 /* libGLEW.2.1.0.dylib in Embed Libraries */,
 				F3D973EE23DDA16900EF7A26 /* libglm_shared.dylib in Embed Libraries */,
+				F34BB77C23EADDBE00643B09 /* libfreetype.6.dylib in Embed Libraries */,
 				F3D973F223DDA16900EF7A26 /* libSOIL.dylib in Embed Libraries */,
 				F3D973F023DDA16900EF7A26 /* libglfw.3.4.dylib in Embed Libraries */,
 			);
@@ -63,6 +67,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F34BB77823EACE3000643B09 /* WeiRuanYaHei-1.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WeiRuanYaHei-1.ttf"; sourceTree = "<group>"; };
+		F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = ../../../../../usr/local/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
 		F3D47AF023E05DFD006F2E05 /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
 		F3D47AF223E19EFF006F2E05 /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		F3D47AF323E19EFF006F2E05 /* Timer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Timer.hpp; sourceTree = "<group>"; };
@@ -90,6 +96,11 @@
 		F3D47B5623E89E16006F2E05 /* FPPCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FPPCamera.cpp; sourceTree = "<group>"; };
 		F3D47B5723E89E16006F2E05 /* FPPCamera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FPPCamera.hpp; sourceTree = "<group>"; };
 		F3D47B5B23EA3D69006F2E05 /* SkyBoxFrag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SkyBoxFrag.glsl; sourceTree = "<group>"; };
+		F3D47B6523EA8CBA006F2E05 /* TextRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextRenderer.cpp; sourceTree = "<group>"; };
+		F3D47B6623EA8CBA006F2E05 /* TextRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextRenderer.hpp; sourceTree = "<group>"; };
+		F3D47B6C23EAA87C006F2E05 /* SourceHanSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SourceHanSans.ttf; sourceTree = "<group>"; };
+		F3D47B6D23EAAD59006F2E05 /* TextVertShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextVertShader.glsl; sourceTree = "<group>"; };
+		F3D47B6E23EAAD66006F2E05 /* TextFragShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextFragShader.glsl; sourceTree = "<group>"; };
 		F3D973B223DD9F0200EF7A26 /* GL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GL; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D973B523DD9F0200EF7A26 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
@@ -132,6 +143,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F34BB77B23EADDBE00643B09 /* libfreetype.6.dylib in Frameworks */,
 				F3D973F323DDA16900EF7A26 /* libGLEW.2.1.0.dylib in Frameworks */,
 				F3D973ED23DDA16900EF7A26 /* libglm_shared.dylib in Frameworks */,
 				F3D973F123DDA16900EF7A26 /* libSOIL.dylib in Frameworks */,
@@ -166,6 +178,15 @@
 				F3D47B5123E83488006F2E05 /* front.jpg */,
 			);
 			path = skybox;
+			sourceTree = "<group>";
+		};
+		F3D47B6B23EAA189006F2E05 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F34BB77823EACE3000643B09 /* WeiRuanYaHei-1.ttf */,
+				F3D47B6C23EAA87C006F2E05 /* SourceHanSans.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F3D973A923DD9F0200EF7A26 = {
@@ -221,6 +242,8 @@
 				F3D47AF623E47178006F2E05 /* InstancingRenderer.hpp */,
 				F3D47B4723E824A3006F2E05 /* SkyboxRenderer.cpp */,
 				F3D47B4823E824A3006F2E05 /* SkyboxRenderer.hpp */,
+				F3D47B6523EA8CBA006F2E05 /* TextRenderer.cpp */,
+				F3D47B6623EA8CBA006F2E05 /* TextRenderer.hpp */,
 			);
 			path = Render;
 			sourceTree = "<group>";
@@ -262,6 +285,7 @@
 		F3D973D823DD9F1C00EF7A26 /* Res */ = {
 			isa = PBXGroup;
 			children = (
+				F3D47B6B23EAA189006F2E05 /* Fonts */,
 				F3D973D923DD9F1C00EF7A26 /* Textures */,
 			);
 			path = Res;
@@ -286,6 +310,8 @@
 				F3D973DE23DD9F1C00EF7A26 /* VertShader.glsl */,
 				F3D47AF823E47244006F2E05 /* instancingShader.glsl */,
 				F3D47B5223E8350D006F2E05 /* SkyBoxVertShader.glsl */,
+				F3D47B6D23EAAD59006F2E05 /* TextVertShader.glsl */,
+				F3D47B6E23EAAD66006F2E05 /* TextFragShader.glsl */,
 			);
 			path = Shader;
 			sourceTree = "<group>";
@@ -293,6 +319,7 @@
 		F3D973E823DDA16900EF7A26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */,
 				F3D973F623DDA17400EF7A26 /* OpenGL.framework */,
 				F3D973EC23DDA16900EF7A26 /* libGLEW.2.1.0.dylib */,
 				F3D973EA23DDA16900EF7A26 /* libglfw.3.4.dylib */,
@@ -412,6 +439,7 @@
 				F3D973FB23DED43500EF7A26 /* Game.cpp in Sources */,
 				F3D973E523DD9F1C00EF7A26 /* Model.cpp in Sources */,
 				F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */,
+				F3D47B6723EA8CBA006F2E05 /* TextRenderer.cpp in Sources */,
 				F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */,
 				F3D47AF723E47178006F2E05 /* InstancingRenderer.cpp in Sources */,
 				F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */,
@@ -536,7 +564,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L24ACW59P4;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = /Users/chen.zr/workspace/GL/GL/include;
+				HEADER_SEARCH_PATHS = (
+					/Users/chen.zr/workspace/GL/GL/include,
+					/Users/chen.zr/workspace/GL/GL/freetype2,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
@@ -551,7 +582,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L24ACW59P4;
 				ENABLE_HARDENED_RUNTIME = YES;
-				HEADER_SEARCH_PATHS = /Users/chen.zr/workspace/GL/GL/include;
+				HEADER_SEARCH_PATHS = (
+					/Users/chen.zr/workspace/GL/GL/include,
+					/Users/chen.zr/workspace/GL/GL/freetype2,
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",

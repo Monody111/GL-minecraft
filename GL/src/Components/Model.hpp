@@ -39,7 +39,6 @@ public:
     void addVBO(int dimensions, const std::vector<GLfloat> &data);
     void addInstanceVBO(int dimensions, const std::vector<glm::vec3> &data);
     
-private:
     GLuint VAO = 0;
     int VBOCount = 0;
     std::vector<GLuint> VBOs;

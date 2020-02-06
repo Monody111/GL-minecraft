@@ -25,7 +25,10 @@ void Game::runLoop() {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
         skyboxRenderer -> renderSky();
+        textRenderer -> RenderText("test", 25, 25, 1, glm::vec3(0.5, 0.8f, 0.2f));
+
         renderer->render(this -> texture);
+        
         
         glfwSwapBuffers(window);
     }
@@ -60,6 +63,9 @@ void Game::loadRenderer() {
     renderer -> bindModel(s -> model);
     
     texture = new BasicTexture("Test.png");
+    
+    textRenderer = new TextRenderer("TextVertShader.glsl",
+                                    "TextFragShader.glsl");
 }
 
 void Game::loadWindow() {
@@ -83,7 +89,9 @@ void Game::loadWindow() {
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     
     glViewport(0, 0, setting->width, setting->height);
-    
+    glEnable(GL_CULL_FACE);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 //    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glEnable(GL_DEPTH_TEST);
 //    glCullFace(GL_BACK);

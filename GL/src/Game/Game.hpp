@@ -21,14 +21,18 @@
 #include "Section.hpp"
 #include "BasicTexture.hpp"
 #include "SkyboxRenderer.hpp"
+#include "TextRenderer.hpp"
+
 class Game {
     
 public:
     GameSetting *setting = nullptr;
     GLFWwindow *window = nullptr;
+    
     Renderer *renderer = nullptr;
     SkyboxRenderer *skyboxRenderer = nullptr;
-//    Controller *c;
+    TextRenderer *textRenderer = nullptr;
+
     GLfloat lastTime = 0.0;
     GLfloat currentTime = 0.0;
     Player *player = nullptr;
