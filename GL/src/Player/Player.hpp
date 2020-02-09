@@ -13,7 +13,7 @@
 #include <glm/gtx/string_cast.hpp>
 #include "Controller.hpp"
 #include "GameSetting.hpp"
-#include "Camera.hpp"
+#include "FPPCamera.hpp"
 
 class Player {
 
@@ -21,7 +21,8 @@ public:
     glm::vec3 position;
     
     Controller *controller = nullptr;
-    Camera *camera = nullptr;
+    FPPCamera *camera = nullptr;
+    GameSetting *setting = nullptr;
     
     Player(GameSetting *setting, glm::vec3 spawnPosition);
     

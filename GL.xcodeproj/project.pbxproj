@@ -16,10 +16,9 @@
 		F3D47AFF23E6DA44006F2E05 /* BasicTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AFD23E6DA44006F2E05 /* BasicTexture.cpp */; };
 		F3D47B4623E8240F006F2E05 /* CubeTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B4423E8240F006F2E05 /* CubeTexture.cpp */; };
 		F3D47B4923E824A3006F2E05 /* SkyboxRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B4723E824A3006F2E05 /* SkyboxRenderer.cpp */; };
-		F3D47B5823E89E16006F2E05 /* FPPCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B5623E89E16006F2E05 /* FPPCamera.cpp */; };
 		F3D47B6723EA8CBA006F2E05 /* TextRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47B6523EA8CBA006F2E05 /* TextRenderer.cpp */; };
 		F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973B523DD9F0200EF7A26 /* main.cpp */; };
-		F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */; };
+		F3D973DF23DD9F1C00EF7A26 /* FPPCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973BD23DD9F1C00EF7A26 /* FPPCamera.cpp */; };
 		F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */; };
 		F3D973E323DD9F1C00EF7A26 /* FileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C723DD9F1C00EF7A26 /* FileUtil.cpp */; };
 		F3D973E523DD9F1C00EF7A26 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973CE23DD9F1C00EF7A26 /* Mesh.cpp */; };
@@ -98,8 +97,6 @@
 		F3D47B5123E83488006F2E05 /* front.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = front.jpg; sourceTree = "<group>"; };
 		F3D47B5223E8350D006F2E05 /* SkyBoxVertShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = SkyBoxVertShader.glsl; sourceTree = "<group>"; };
 		F3D47B5523E888F1006F2E05 /* wg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wg.jpg; sourceTree = "<group>"; };
-		F3D47B5623E89E16006F2E05 /* FPPCamera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FPPCamera.cpp; sourceTree = "<group>"; };
-		F3D47B5723E89E16006F2E05 /* FPPCamera.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FPPCamera.hpp; sourceTree = "<group>"; };
 		F3D47B5B23EA3D69006F2E05 /* SkyBoxFrag.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SkyBoxFrag.glsl; sourceTree = "<group>"; };
 		F3D47B6523EA8CBA006F2E05 /* TextRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextRenderer.cpp; sourceTree = "<group>"; };
 		F3D47B6623EA8CBA006F2E05 /* TextRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextRenderer.hpp; sourceTree = "<group>"; };
@@ -108,7 +105,7 @@
 		F3D47B6E23EAAD66006F2E05 /* TextFragShader.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = TextFragShader.glsl; sourceTree = "<group>"; };
 		F3D973B223DD9F0200EF7A26 /* GL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GL; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D973B523DD9F0200EF7A26 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		F3D973BD23DD9F1C00EF7A26 /* FPPCamera.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FPPCamera.cpp; sourceTree = "<group>"; };
 		F3D973C023DD9F1C00EF7A26 /* Renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Renderer.hpp; sourceTree = "<group>"; };
 		F3D973C123DD9F1C00EF7A26 /* DefaultRenderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DefaultRenderer.hpp; sourceTree = "<group>"; };
 		F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DefaultRenderer.cpp; sourceTree = "<group>"; };
@@ -122,7 +119,7 @@
 		F3D973D223DD9F1C00EF7A26 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		F3D973D323DD9F1C00EF7A26 /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
 		F3D973D423DD9F1C00EF7A26 /* ShaderLoader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ShaderLoader.cpp; sourceTree = "<group>"; };
-		F3D973D523DD9F1C00EF7A26 /* Camera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Camera.hpp; sourceTree = "<group>"; };
+		F3D973D523DD9F1C00EF7A26 /* FPPCamera.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FPPCamera.hpp; sourceTree = "<group>"; };
 		F3D973DA23DD9F1C00EF7A26 /* Test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Test.png; path = GL/Res/Textures/Test.png; sourceTree = SOURCE_ROOT; };
 		F3D973DC23DD9F1C00EF7A26 /* LightFragShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LightFragShader.glsl; sourceTree = "<group>"; };
 		F3D973DD23DD9F1C00EF7A26 /* FragShader.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FragShader.glsl; sourceTree = "<group>"; };
@@ -362,12 +359,10 @@
 			children = (
 				F3D973FC23DEF92100EF7A26 /* Controller.cpp */,
 				F3D973FD23DEF92100EF7A26 /* Controller.hpp */,
-				F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */,
-				F3D973D523DD9F1C00EF7A26 /* Camera.hpp */,
+				F3D973BD23DD9F1C00EF7A26 /* FPPCamera.cpp */,
+				F3D973D523DD9F1C00EF7A26 /* FPPCamera.hpp */,
 				F3D973FF23DEFC9400EF7A26 /* Player.cpp */,
 				F3D9740023DEFC9400EF7A26 /* Player.hpp */,
-				F3D47B5623E89E16006F2E05 /* FPPCamera.cpp */,
-				F3D47B5723E89E16006F2E05 /* FPPCamera.hpp */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -444,7 +439,6 @@
 				F3D47B4623E8240F006F2E05 /* CubeTexture.cpp in Sources */,
 				F3D47AFF23E6DA44006F2E05 /* BasicTexture.cpp in Sources */,
 				F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */,
-				F3D47B5823E89E16006F2E05 /* FPPCamera.cpp in Sources */,
 				F3D9741023DF2B7100EF7A26 /* Chunk.cpp in Sources */,
 				F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */,
 				F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */,
@@ -456,7 +450,7 @@
 				F3D9740123DEFC9400EF7A26 /* Player.cpp in Sources */,
 				F3D973FB23DED43500EF7A26 /* Game.cpp in Sources */,
 				F3D973E523DD9F1C00EF7A26 /* Mesh.cpp in Sources */,
-				F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */,
+				F3D973DF23DD9F1C00EF7A26 /* FPPCamera.cpp in Sources */,
 				F3D47B6723EA8CBA006F2E05 /* TextRenderer.cpp in Sources */,
 				F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */,
 				F3D47AF723E47178006F2E05 /* InstancingRenderer.cpp in Sources */,

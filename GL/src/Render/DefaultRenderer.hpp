@@ -17,7 +17,7 @@
 #include "Renderer.hpp"
 #include "BaseComponent.hpp"
 #include "BasicTexture.hpp"
-#include "Camera.hpp"
+#include "FPPCamera.hpp"
 
 class DefaultRenderer: public Renderer{
 public:

@@ -11,7 +11,7 @@
 
 #include <string>
 #include "Mesh.hpp"
-#include "Camera.hpp"
+#include "FPPCamera.hpp"
 #include "Shader.hpp"
 #include "BasicTexture.hpp"
 
@@ -22,7 +22,7 @@ public:
     
     std::string name;
     Mesh *mesh = nullptr;
-    Camera *camera = nullptr;
+    FPPCamera *camera = nullptr;
     Shader *shader = nullptr;
     
     Renderer(const std::string &vertShaderName,
@@ -39,7 +39,7 @@ public:
         }
     }
     
-    void bindCamera(Camera *camera){
+    void bindCamera(FPPCamera *camera){
         if(camera){
             this->camera = camera;
         }else{
