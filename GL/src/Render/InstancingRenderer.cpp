@@ -25,7 +25,7 @@ void InstancingRenderer::render(BasicTexture *t) {
     t -> bindTexture();
     
 
-    model->bindVAO();
+    mesh->bindVAO();
     glDrawArraysInstanced(GL_TRIANGLES, 0, 36, 256);
     glBindVertexArray(0);
 }

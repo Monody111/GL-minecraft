@@ -14,7 +14,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Renderer.hpp"
-#include "Model.hpp"
+#include "Mesh.hpp"
 #include "BasicTexture.hpp"
 
 class InstancingRenderer: public Renderer{

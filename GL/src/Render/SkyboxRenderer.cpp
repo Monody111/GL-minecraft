@@ -13,12 +13,13 @@
 SkyboxRenderer::SkyboxRenderer(const std::string &vertShaderName,
                                const std::string &fragShaderName):
                                Renderer(vertShaderName, fragShaderName){
-                                   loadModel();
+                                   loadMesh();
                                    loadTexture();
                                }
 
 void SkyboxRenderer::renderSky() {
-    glDepthMask(GL_FALSE);
+    glDepthFunc(GL_LEQUAL);
+//    glDepthMask(GL_FALSE);
     shader -> Use();
     glm::mat4 viewMat4 = camera -> getViewMatrix();
     viewMat4[3][0] = 0;
@@ -33,20 +34,21 @@ void SkyboxRenderer::renderSky() {
     glUniformMatrix4fv(viewlLoc, 1, GL_FALSE, glm::value_ptr(viewMat4));
     glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projectionMat4));
     
-    model -> bindVAO();
+    mesh -> bindVAO();
     
     glActiveTexture(GL_TEXTURE0);
     glUniform1i(glGetUniformLocation(shader -> program, "skybox"), 0);
     cubetexture -> bindTexture();
     glDrawArrays(GL_TRIANGLES, 0, 36);
     glBindVertexArray(0);
-    glDepthMask(GL_TRUE);
+//    glDepthMask(GL_TRUE);
+    glDepthFunc(GL_LESS);
 }
 
-void SkyboxRenderer::loadModel() { 
-    model = new Model();
-    model -> createVAO();
-    model -> addVBO(3, vertextPosition);
+void SkyboxRenderer::loadMesh() {
+    mesh = new Mesh();
+    mesh -> createVAO();
+    mesh -> addVBO(3, vertextPosition);
 }
 
 void SkyboxRenderer::loadTexture() {

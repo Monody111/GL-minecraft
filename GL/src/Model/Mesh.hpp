@@ -1,57 +1,49 @@
 //
-//  Mesh.hpp
-//  GL
+//  Model.hpp
+//  LearnOpenGL
 //
-//  Created by Chen.Zr on 2020/2/6.
-//  Copyright © 2020 Chen.Zr. All rights reserved.
+//  Created by Chen.Zr on 2019/11/3.
+//  Copyright © 2019 Chen.Zr. All rights reserved.
 //
 
-#ifndef Mesh_hpp
-#define Mesh_hpp
+#ifndef Model_hpp
+#define Model_hpp
 
-#include <glm/glm.hpp>
-#include <vector>
 #include <GL/glew.h>
-
-#include "BasicTexture.hpp"
-
-struct Vertex {
-    glm::vec3 position;
-    glm::vec3 normal;
-    glm::vec2 texCroods;
-};
+#include <vector>
+#include <string>
+#include <glm/glm.hpp>
+#include <iostream>
 
 class Mesh {
     
+    std::string name;
+    
 public:
-    std::vector<Vertex> vertices;
-    std::vector<GLuint> indices;
-    std::vector<BasicTexture> textures;
+    Mesh() = default;
+    Mesh(const std::vector<GLfloat> &vertextPosition,
+          const std::vector<GLfloat> &textureCroods);
+//          const std::vector<GLint> &indices,);
+    Mesh(const GLfloat *vertextPosition,
+          const GLfloat *textureCroods);
+//          const GLint* indices);
+    ~Mesh();
     
-//    std::vector<GLuint> VBOs;
-    
-    GLuint VAO = 0;
-    GLuint VBO = 0;
-    GLuint EBO = 0;
-    int VBOCount = 0;
-    
-    
-    Mesh(std::vector<Vertex> vertices,
-         std::vector<GLuint> indices,
-         std::vector<BasicTexture> textures);
-    
-//    ~Mesh();
-    
-//    void createVAO();
+    void addData(const std::vector<GLfloat> &vertextPosition,
+                 const std::vector<GLfloat> &textureCroods);
+//                 const std::vector<GLint> &indices);
+    void createVAO();
     void bindVAO();
-//    void deleteData();
+    void deleteData();
     
-//    void addVBO(int dimensions, const std::vector<GLfloat> &data);
+    void addVBO(int dimensions, const std::vector<GLfloat> &data);
     void addInstanceVBO(int dimensions, const std::vector<glm::vec3> &data);
     
-//    void addEBO(std::vector<GLint> indices);
+    GLuint VAO = 0;
+    int VBOCount = 0;
+    std::vector<GLuint> VBOs;
     
-    void setupMesh();
+    void addEBO(const std::vector<GLint>& indices);
 };
 
-#endif /* Mesh_hpp */
+#endif /* Model_hpp */

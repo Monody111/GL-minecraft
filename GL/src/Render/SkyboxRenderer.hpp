@@ -68,7 +68,7 @@ class SkyboxRenderer: public Renderer{
         
         SkyboxRenderer(const std::string &vertShaderName,
                        const std::string &fragShaderName);
-        void loadModel();
+        void loadMesh();
         void loadTexture();
         void renderSky();
     

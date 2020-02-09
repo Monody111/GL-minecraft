@@ -23,7 +23,7 @@ void DefaultRenderer::render(BasicTexture *t) {
     glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projectionMat4));
     
     shader->Use();
-    model->bindVAO();
+    mesh->bindVAO();
     glDrawArrays(GL_TRIANGLES, 0, 36);
 }
 

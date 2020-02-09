@@ -10,6 +10,8 @@
 
 Section::Section(){
     
+//    std::vector<GLfloat> texCoords
+    
     std::vector<glm::vec3> translations;
     
     for(int y = 0; y < 16; y++){
@@ -20,9 +22,9 @@ Section::Section(){
         }
     }
     
-    model = new Model();
-    model -> createVAO();
-    model -> addVBO(3, vertextPosition);
-    model -> addVBO(2, textureCroods);
-    model -> addInstanceVBO(3, translations);
+    mesh = new Mesh();
+    mesh -> createVAO();
+    mesh -> addVBO(3, vertextPosition);
+    mesh -> addVBO(2, textureCroods);
+    mesh -> addInstanceVBO(3, translations);
 }

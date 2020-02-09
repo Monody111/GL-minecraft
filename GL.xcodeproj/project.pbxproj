@@ -10,7 +10,6 @@
 		F34BB77B23EADDBE00643B09 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */; };
 		F34BB77C23EADDBE00643B09 /* libfreetype.6.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F34BB77F23EBEAD300643B09 /* PlayerRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F34BB77D23EBEAD300643B09 /* PlayerRenderer.cpp */; };
-		F34BB78223EBEB7900643B09 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F34BB78023EBEB7900643B09 /* Mesh.cpp */; };
 		F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF223E19EFF006F2E05 /* Timer.cpp */; };
 		F3D47AF723E47178006F2E05 /* InstancingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF523E47178006F2E05 /* InstancingRenderer.cpp */; };
 		F3D47AFB23E47818006F2E05 /* Section.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF923E47818006F2E05 /* Section.cpp */; };
@@ -23,7 +22,7 @@
 		F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973BD23DD9F1C00EF7A26 /* Camera.cpp */; };
 		F3D973E223DD9F1C00EF7A26 /* DefaultRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C423DD9F1C00EF7A26 /* DefaultRenderer.cpp */; };
 		F3D973E323DD9F1C00EF7A26 /* FileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973C723DD9F1C00EF7A26 /* FileUtil.cpp */; };
-		F3D973E523DD9F1C00EF7A26 /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973CE23DD9F1C00EF7A26 /* Model.cpp */; };
+		F3D973E523DD9F1C00EF7A26 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973CE23DD9F1C00EF7A26 /* Mesh.cpp */; };
 		F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973D223DD9F1C00EF7A26 /* Shader.cpp */; };
 		F3D973E723DD9F1C00EF7A26 /* ShaderLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D973D423DD9F1C00EF7A26 /* ShaderLoader.cpp */; };
 		F3D973ED23DDA16900EF7A26 /* libglm_shared.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D973E923DDA16900EF7A26 /* libglm_shared.dylib */; };
@@ -73,8 +72,6 @@
 		F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfreetype.6.dylib; path = ../../../../../usr/local/lib/libfreetype.6.dylib; sourceTree = "<group>"; };
 		F34BB77D23EBEAD300643B09 /* PlayerRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerRenderer.cpp; sourceTree = "<group>"; };
 		F34BB77E23EBEAD300643B09 /* PlayerRenderer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PlayerRenderer.hpp; sourceTree = "<group>"; };
-		F34BB78023EBEB7900643B09 /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
-		F34BB78123EBEB7900643B09 /* Mesh.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
 		F3BB13B523EC3B4100A5C71D /* minecraft-steve.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "minecraft-steve.mtl"; sourceTree = "<group>"; };
 		F3BB13B623EC3B4100A5C71D /* Steve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Steve.png; sourceTree = "<group>"; };
 		F3BB13B723EC3B4100A5C71D /* minecraft-steve.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "minecraft-steve.obj"; sourceTree = "<group>"; };
@@ -118,9 +115,9 @@
 		F3D973C623DD9F1C00EF7A26 /* FileUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = FileUtil.hpp; sourceTree = "<group>"; };
 		F3D973C723DD9F1C00EF7A26 /* FileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FileUtil.cpp; sourceTree = "<group>"; };
 		F3D973C923DD9F1C00EF7A26 /* BaseComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BaseComponent.hpp; sourceTree = "<group>"; };
-		F3D973CB23DD9F1C00EF7A26 /* Model.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Model.hpp; sourceTree = "<group>"; };
+		F3D973CB23DD9F1C00EF7A26 /* Mesh.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mesh.hpp; sourceTree = "<group>"; };
 		F3D973CD23DD9F1C00EF7A26 /* CubeComponent.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CubeComponent.hpp; sourceTree = "<group>"; };
-		F3D973CE23DD9F1C00EF7A26 /* Model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
+		F3D973CE23DD9F1C00EF7A26 /* Mesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
 		F3D973D123DD9F1C00EF7A26 /* ShaderLoader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ShaderLoader.hpp; sourceTree = "<group>"; };
 		F3D973D223DD9F1C00EF7A26 /* Shader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
 		F3D973D323DD9F1C00EF7A26 /* Shader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
@@ -285,10 +282,8 @@
 			children = (
 				F3D973C923DD9F1C00EF7A26 /* BaseComponent.hpp */,
 				F3D973CD23DD9F1C00EF7A26 /* CubeComponent.hpp */,
-				F3D973CE23DD9F1C00EF7A26 /* Model.cpp */,
-				F3D973CB23DD9F1C00EF7A26 /* Model.hpp */,
-				F34BB78023EBEB7900643B09 /* Mesh.cpp */,
-				F34BB78123EBEB7900643B09 /* Mesh.hpp */,
+				F3D973CE23DD9F1C00EF7A26 /* Mesh.cpp */,
+				F3D973CB23DD9F1C00EF7A26 /* Mesh.hpp */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,7 +444,6 @@
 				F3D47B4623E8240F006F2E05 /* CubeTexture.cpp in Sources */,
 				F3D47AFF23E6DA44006F2E05 /* BasicTexture.cpp in Sources */,
 				F3D973E623DD9F1C00EF7A26 /* Shader.cpp in Sources */,
-				F34BB78223EBEB7900643B09 /* Mesh.cpp in Sources */,
 				F3D47B5823E89E16006F2E05 /* FPPCamera.cpp in Sources */,
 				F3D9741023DF2B7100EF7A26 /* Chunk.cpp in Sources */,
 				F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */,
@@ -461,7 +455,7 @@
 				F3D973E723DD9F1C00EF7A26 /* ShaderLoader.cpp in Sources */,
 				F3D9740123DEFC9400EF7A26 /* Player.cpp in Sources */,
 				F3D973FB23DED43500EF7A26 /* Game.cpp in Sources */,
-				F3D973E523DD9F1C00EF7A26 /* Model.cpp in Sources */,
+				F3D973E523DD9F1C00EF7A26 /* Mesh.cpp in Sources */,
 				F3D973DF23DD9F1C00EF7A26 /* Camera.cpp in Sources */,
 				F3D47B6723EA8CBA006F2E05 /* TextRenderer.cpp in Sources */,
 				F3D973B623DD9F0200EF7A26 /* main.cpp in Sources */,

@@ -12,7 +12,7 @@
 #include <GL/glew.h>
 #include <vector>
 #include <glm/glm.hpp>
-#include "Model.hpp"
+#include "Mesh.hpp"
 
 class Section{
 
@@ -20,7 +20,8 @@ public:
     
     Section();
     
-    Model *model = nullptr;
+//    Model *model = nullptr;
+    Mesh *mesh = nullptr;
 
     std::vector<GLfloat> vertextPosition{
         //F
@@ -42,6 +43,51 @@ public:
         1.0, 0.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0,
         0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0
     };
+    
+    std::vector<GLfloat> vertices{
+        0, 0, 0,
+        1, 0, 0,
+        1, 1, 0,
+        0, 1, 0,
+        0, 0, 1,
+        1, 0, 1,
+        1, 1, 1,
+        0, 1, 1
+    };
+    
+    std::vector<GLfloat> normal{
+        //F
+        0.0, 0.0, 1.0,
+        //B
+        0.0, 0.0,-1.0,
+        //L
+        1.0, 0.0, 0.0,
+        //R
+        -1.0,0.0, 0.0,
+        //U
+        0.0, 1.0, 0.0,
+        //D
+        0.0,-1.0, 0.0
+    };
+    
+    std::vector<GLuint> indices{
+        0, 1, 3, 3, 1, 2,
+        1, 5, 2, 2, 5, 6,
+        5, 4, 6, 6, 4, 7,
+        4, 0, 7, 7, 0, 3,
+        3, 2, 7, 7, 2, 6,
+        4, 5, 0, 0, 5, 1
+    };
+    
+    std::vector<GLfloat> texCoords =
+    {
+        0, 0,
+        1, 0,
+        1, 1,
+        0, 1
+    };
+    
+    std::vector<int> texInds = { 0, 1, 3, 3, 1, 2 };
     
     std::vector<GLfloat> textureCroods{
         //F

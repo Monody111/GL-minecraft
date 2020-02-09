@@ -31,7 +31,7 @@ void TextRenderer::loadFT(){
     if (error)
         std::cout << "ERROR::FREETYPE: Failed to load font" << std::endl;
     
-    FT_Set_Pixel_Sizes(face, 0, 48);
+    FT_Set_Pixel_Sizes(face, 0, 20);
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1); //禁用byte-alignment限制
     
     for (GLubyte c = 0; c < 128; c++)
@@ -112,6 +112,8 @@ void TextRenderer::loadModel() {
 
 void TextRenderer::RenderText(std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color)
 {
+//    glDepthMask(GL_FALSE);
+//    glDepthFunc(GL_ALWAYS);
     // Activate corresponding render state
     shader -> Use();
     glm::mat4 projection = glm::ortho(0.0f, (GLfloat)800, 0.0f, (GLfloat)600);
@@ -153,6 +155,8 @@ void TextRenderer::RenderText(std::string text, GLfloat x, GLfloat y, GLfloat sc
         // Now advance cursors for next glyph (note that advance is number of 1/64 pixels)
         x += (ch.Advance >> 6) * scale; // Bitshift by 6 to get value in pixels (2^6 = 64 (divide amount of 1/64th pixels by 64 to get amount of pixels))
     }
+//    glDepthMask(GL_TRUE);
+//    glDepthFunc(GL_LESS);
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
 }

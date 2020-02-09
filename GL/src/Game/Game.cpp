@@ -21,16 +21,19 @@ void Game::runLoop() {
         player -> view();
         player -> verticality(deltaTime);
         
+        
+        
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
+        textRenderer -> RenderText(currentFPS, 25, 25, 1, glm::vec3(0.5, 0.8f, 0.2f));
         skyboxRenderer -> renderSky();
-        textRenderer -> RenderText("test", 25, 25, 1, glm::vec3(0.5, 0.8f, 0.2f));
-
+        
         renderer->render(this -> texture);
         
         
         glfwSwapBuffers(window);
+        FPS(deltaTime);
     }
     glfwTerminate();
 }
@@ -60,7 +63,7 @@ void Game::loadRenderer() {
     renderer = new InstancingRenderer("instancingShader.glsl",
                                       "FragShader.glsl");
     renderer -> bindCamera(player -> camera);
-    renderer -> bindModel(s -> model);
+    renderer -> bindModel(s -> mesh);
     
     texture = new BasicTexture("Test.png");
     
@@ -89,13 +92,27 @@ void Game::loadWindow() {
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     
     glViewport(0, 0, setting->width, setting->height);
-    glEnable(GL_CULL_FACE);
+//    glEnable(GL_CULL_FACE);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 //    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     glEnable(GL_DEPTH_TEST);
+//    glDepthFunc(GL_LESS);
 //    glCullFace(GL_BACK);
 }
+
+void Game::FPS(GLfloat deltaTime) { 
+    countTime += deltaTime;
+    ++countFPS;
+    if (countTime > 1.0) {
+        currentFPS = "FPS: " + to_string(int(countFPS / countTime));
+        std::cout << currentFPS << std::endl;
+        countFPS = 0;
+        countTime = 0;
+    }
+
+}
+
 
 
 

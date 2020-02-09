@@ -9,17 +9,17 @@
 #ifndef BaseComponet_hpp
 #define BaseComponet_hpp
 
-#include "Model.hpp"
+#include "Mesh.hpp"
 #include <glm/glm.hpp>
 
 class BaseComponent {
     
 public:
-    Model *model = nullptr;
+    Mesh *mesh = nullptr;
     
-    inline Model *getComponentModel(){
-        if(model){
-            return model;
+    inline Mesh *getComponentModel(){
+        if(mesh){
+            return mesh;
         }else{
             throw std::runtime_error("invalid model pointer");
         }

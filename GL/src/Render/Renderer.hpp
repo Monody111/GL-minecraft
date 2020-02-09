@@ -10,7 +10,7 @@
 #define Render_hpp
 
 #include <string>
-#include "Model.hpp"
+#include "Mesh.hpp"
 #include "Camera.hpp"
 #include "Shader.hpp"
 #include "BasicTexture.hpp"
@@ -21,7 +21,7 @@ class Renderer {
 public:
     
     std::string name;
-    Model *model = nullptr;
+    Mesh *mesh = nullptr;
     Camera *camera = nullptr;
     Shader *shader = nullptr;
     
@@ -31,11 +31,11 @@ public:
     }
     void virtual render(BasicTexture *t) = 0;
     
-    void bindModel(Model *model) {
-        if(model){
-            this->model = model;
+    void bindModel(Mesh *mesh) {
+        if(mesh){
+            this->mesh = mesh;
         }else{
-            throw std::runtime_error("Unable to bind model to render: ");
+            throw std::runtime_error("Unable to bind mesh to render: ");
         }
     }
     

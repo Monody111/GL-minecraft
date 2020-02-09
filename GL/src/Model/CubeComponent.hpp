@@ -58,11 +58,11 @@ public:
     };
     
     CubeComponent(){
-        model = new Model(vertextPosition, textureCroods);
+        mesh = new Mesh(vertextPosition, textureCroods);
     };
     
     ~CubeComponent(){
-        delete model;
+        delete mesh;
     };
 };
 #endif /* CubeComponent_hpp */

@@ -39,6 +39,10 @@ public:
     
     BasicTexture *texture = nullptr;
     
+    GLfloat countTime = 0.0;
+    int countFPS = 0;
+    string currentFPS = "";
+    
     Game(GameSetting *setting);
     
     inline static void key_callback(GLFWwindow* window,int key,int scancode,int action,int mods){
@@ -54,6 +58,7 @@ public:
     void loadWindow();
     void runLoop();
     void loadRenderer();
+    void FPS(GLfloat deltaTime);
 };
 
 #endif /* Game_hpp */
