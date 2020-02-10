@@ -29,6 +29,9 @@ public:
     void movement(GLfloat deltaTime);
     void verticality(GLfloat deltaTime);
     void view();
+    inline void setLoation(){
+        this -> position = camera -> position;
+    }
 };
 
 #endif /* Player_hpp */

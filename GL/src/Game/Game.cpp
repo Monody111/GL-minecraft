@@ -21,16 +21,14 @@ void Game::runLoop() {
         player -> view();
         player -> verticality(deltaTime);
         
-        
-        
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         
-        textRenderer -> RenderText(currentFPS, 25, 25, 1, glm::vec3(0.5, 0.8f, 0.2f));
+        showInfo();
+        
         skyboxRenderer -> renderSky();
         
         renderer->render(this -> texture);
-        
         
         glfwSwapBuffers(window);
         FPS(deltaTime);
@@ -68,7 +66,8 @@ void Game::loadRenderer() {
     texture = new BasicTexture("Test.png");
     
     textRenderer = new TextRenderer("TextVertShader.glsl",
-                                    "TextFragShader.glsl");
+                                    "TextFragShader.glsl",
+                                    setting);
 }
 
 void Game::loadWindow() {
@@ -84,7 +83,7 @@ void Game::loadWindow() {
     }
     glfwMakeContextCurrent(window);
     
-    player = new Player(this -> setting, glm::vec3(8.0, -1.0, 8.0));
+    player = new Player(this -> setting, glm::vec3(8.0, 3.0, 8.0));
     glfwSetWindowUserPointer(window, this -> player -> controller);
     
     glfwSetKeyCallback(window, key_callback);
@@ -92,26 +91,44 @@ void Game::loadWindow() {
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     
     glViewport(0, 0, setting->width, setting->height);
-//    glEnable(GL_CULL_FACE);
+    
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
+    
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    
 //    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    
     glEnable(GL_DEPTH_TEST);
-//    glDepthFunc(GL_LESS);
-//    glCullFace(GL_BACK);
+    glDepthFunc(GL_LESS);
+
 }
 
 void Game::FPS(GLfloat deltaTime) { 
     countTime += deltaTime;
     ++countFPS;
     if (countTime > 1.0) {
-        currentFPS = "FPS: " + to_string(int(countFPS / countTime));
-        std::cout << currentFPS << std::endl;
+        currentFPS = countFPS/countTime;
+//        std::cout << currentFPS << std::endl;
         countFPS = 0;
         countTime = 0;
     }
-
+    
 }
+
+void Game::showInfo() {
+    std::string fps = "FPS: " + std::to_string(currentFPS);
+
+    textRenderer -> RenderText(fps, 25, 25, 1, glm::vec3(0.5, 0.8f, 0.2f));
+    
+    std::string loc = "Loction: " + std::to_string(int(player -> position.x)) + ", "
+                                  + std::to_string(int(player -> position.y)) + ", "
+                                  + std::to_string(int(player -> position.z));
+    
+    textRenderer -> RenderText(loc, 25, 50, 1, glm::vec3(0.5, 0.8f, 0.2f));;
+}
+
 
 
 

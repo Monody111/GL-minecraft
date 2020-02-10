@@ -12,6 +12,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
+
 #include "Shader.hpp"
 #include "DefaultRenderer.hpp"
 #include "GameSetting.hpp"
@@ -41,7 +42,8 @@ public:
     
     GLfloat countTime = 0.0;
     int countFPS = 0;
-    string currentFPS = "";
+    
+    int currentFPS = 0;
     
     Game(GameSetting *setting);
     
@@ -58,7 +60,9 @@ public:
     void loadWindow();
     void runLoop();
     void loadRenderer();
+    
     void FPS(GLfloat deltaTime);
+    void showInfo();
 };
 
 #endif /* Game_hpp */

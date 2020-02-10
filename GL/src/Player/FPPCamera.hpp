@@ -12,6 +12,8 @@
 #include <glm/glm.hpp>
 #include <GL/glew.h>
 #include <glm/gtc/matrix_transform.hpp>
+#include <iostream>
+
 #include "GameSetting.hpp"
 
 // enum be used in movement

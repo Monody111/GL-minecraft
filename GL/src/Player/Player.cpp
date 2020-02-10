@@ -30,6 +30,7 @@ void Player::movement(GLfloat deltaTime) {
     if (controller -> keys[GLFW_KEY_D]) {
         camera->ProcessMovement(RIGHT, velocity);
     };
+    setLoation();
 }
 
 void Player::view(){
@@ -47,7 +48,9 @@ void Player::verticality(GLfloat deltaTime) {
     if (controller -> keys[GLFW_KEY_LEFT_SHIFT]) {
         camera->ProcessVerticality(BOTTOM, velocity);
     };
+    setLoation();
 }
+
 
 
 

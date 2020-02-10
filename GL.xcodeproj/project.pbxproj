@@ -10,6 +10,11 @@
 		F34BB77B23EADDBE00643B09 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */; };
 		F34BB77C23EADDBE00643B09 /* libfreetype.6.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F34BB77F23EBEAD300643B09 /* PlayerRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F34BB77D23EBEAD300643B09 /* PlayerRenderer.cpp */; };
+		F3BB13CD23F0358400A5C71D /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3BB13CB23F0358400A5C71D /* Model.cpp */; };
+		F3BB13D023F0368A00A5C71D /* libassimp.5.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BB13CE23F0368A00A5C71D /* libassimp.5.0.0.dylib */; };
+		F3BB13D123F0368A00A5C71D /* libassimp.5.0.0.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = F3BB13CE23F0368A00A5C71D /* libassimp.5.0.0.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		F3BB13D223F0368A00A5C71D /* libIrrXML.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BB13CF23F0368A00A5C71D /* libIrrXML.dylib */; };
+		F3BB13D323F0368A00A5C71D /* libIrrXML.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = F3BB13CF23F0368A00A5C71D /* libIrrXML.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF223E19EFF006F2E05 /* Timer.cpp */; };
 		F3D47AF723E47178006F2E05 /* InstancingRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF523E47178006F2E05 /* InstancingRenderer.cpp */; };
 		F3D47AFB23E47818006F2E05 /* Section.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F3D47AF923E47818006F2E05 /* Section.cpp */; };
@@ -57,7 +62,9 @@
 			files = (
 				F3D973F423DDA16900EF7A26 /* libGLEW.2.1.0.dylib in Embed Libraries */,
 				F3D973EE23DDA16900EF7A26 /* libglm_shared.dylib in Embed Libraries */,
+				F3BB13D123F0368A00A5C71D /* libassimp.5.0.0.dylib in Embed Libraries */,
 				F34BB77C23EADDBE00643B09 /* libfreetype.6.dylib in Embed Libraries */,
+				F3BB13D323F0368A00A5C71D /* libIrrXML.dylib in Embed Libraries */,
 				F3D973F223DDA16900EF7A26 /* libSOIL.dylib in Embed Libraries */,
 				F3D973F023DDA16900EF7A26 /* libglfw.3.4.dylib in Embed Libraries */,
 			);
@@ -74,6 +81,10 @@
 		F3BB13B523EC3B4100A5C71D /* minecraft-steve.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "minecraft-steve.mtl"; sourceTree = "<group>"; };
 		F3BB13B623EC3B4100A5C71D /* Steve.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Steve.png; sourceTree = "<group>"; };
 		F3BB13B723EC3B4100A5C71D /* minecraft-steve.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "minecraft-steve.obj"; sourceTree = "<group>"; };
+		F3BB13CB23F0358400A5C71D /* Model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
+		F3BB13CC23F0358400A5C71D /* Model.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Model.hpp; sourceTree = "<group>"; };
+		F3BB13CE23F0368A00A5C71D /* libassimp.5.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libassimp.5.0.0.dylib; path = "lib/assimp-5.0.0/libassimp.5.0.0.dylib"; sourceTree = "<group>"; };
+		F3BB13CF23F0368A00A5C71D /* libIrrXML.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libIrrXML.dylib; path = "lib/assimp-5.0.0/libIrrXML.dylib"; sourceTree = "<group>"; };
 		F3D47AF223E19EFF006F2E05 /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
 		F3D47AF323E19EFF006F2E05 /* Timer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Timer.hpp; sourceTree = "<group>"; };
 		F3D47AF523E47178006F2E05 /* InstancingRenderer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InstancingRenderer.cpp; sourceTree = "<group>"; };
@@ -149,7 +160,9 @@
 				F3D973F323DDA16900EF7A26 /* libGLEW.2.1.0.dylib in Frameworks */,
 				F3D973ED23DDA16900EF7A26 /* libglm_shared.dylib in Frameworks */,
 				F3D973F123DDA16900EF7A26 /* libSOIL.dylib in Frameworks */,
+				F3BB13D023F0368A00A5C71D /* libassimp.5.0.0.dylib in Frameworks */,
 				F3D973F723DDA17400EF7A26 /* OpenGL.framework in Frameworks */,
+				F3BB13D223F0368A00A5C71D /* libIrrXML.dylib in Frameworks */,
 				F3D973EF23DDA16900EF7A26 /* libglfw.3.4.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,6 +294,8 @@
 				F3D973CD23DD9F1C00EF7A26 /* CubeComponent.hpp */,
 				F3D973CE23DD9F1C00EF7A26 /* Mesh.cpp */,
 				F3D973CB23DD9F1C00EF7A26 /* Mesh.hpp */,
+				F3BB13CB23F0358400A5C71D /* Model.cpp */,
+				F3BB13CC23F0358400A5C71D /* Model.hpp */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,6 +349,8 @@
 		F3D973E823DDA16900EF7A26 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3BB13CE23F0368A00A5C71D /* libassimp.5.0.0.dylib */,
+				F3BB13CF23F0368A00A5C71D /* libIrrXML.dylib */,
 				F34BB77A23EADDBD00643B09 /* libfreetype.6.dylib */,
 				F3D973F623DDA17400EF7A26 /* OpenGL.framework */,
 				F3D973EC23DDA16900EF7A26 /* libGLEW.2.1.0.dylib */,
@@ -443,6 +460,7 @@
 				F3D973FE23DEF92100EF7A26 /* Controller.cpp in Sources */,
 				F3D47AF423E19EFF006F2E05 /* Timer.cpp in Sources */,
 				F34BB77F23EBEAD300643B09 /* PlayerRenderer.cpp in Sources */,
+				F3BB13CD23F0358400A5C71D /* Model.cpp in Sources */,
 				F3D47B4923E824A3006F2E05 /* SkyboxRenderer.cpp in Sources */,
 				F3D973E323DD9F1C00EF7A26 /* FileUtil.cpp in Sources */,
 				F3D47AFB23E47818006F2E05 /* Section.cpp in Sources */,
@@ -583,6 +601,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/assimp-5.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -601,6 +620,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/assimp-5.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

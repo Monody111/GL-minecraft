@@ -10,11 +10,12 @@
 
 
 TextRenderer::TextRenderer(const std::string &vertShaderName,
-                           const std::string &fragShaderName):
+                           const std::string &fragShaderName,
+                           GameSetting *setting):
 Renderer(vertShaderName, fragShaderName){
+    this -> setting = setting;
     loadFT();
-    loadModel();
-    
+    loadModel();    
 }
 
 void TextRenderer::render(BasicTexture *t) {
@@ -108,15 +109,16 @@ void TextRenderer::loadModel() {
     glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), 0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
+    
+    projection = glm::ortho(0.0f, (GLfloat)setting->width,
+                            0.0f, (GLfloat)setting->height);
 }
 
 void TextRenderer::RenderText(std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color)
 {
-//    glDepthMask(GL_FALSE);
-//    glDepthFunc(GL_ALWAYS);
+
     // Activate corresponding render state
     shader -> Use();
-    glm::mat4 projection = glm::ortho(0.0f, (GLfloat)800, 0.0f, (GLfloat)600);
     glUniformMatrix4fv(glGetUniformLocation(shader->program, "projection"), 1, GL_FALSE, glm::value_ptr(projection));
     glUniform3f(glGetUniformLocation(shader -> program, "textColor"), color.x, color.y, color.z);
     glActiveTexture(GL_TEXTURE0);
@@ -155,8 +157,6 @@ void TextRenderer::RenderText(std::string text, GLfloat x, GLfloat y, GLfloat sc
         // Now advance cursors for next glyph (note that advance is number of 1/64 pixels)
         x += (ch.Advance >> 6) * scale; // Bitshift by 6 to get value in pixels (2^6 = 64 (divide amount of 1/64th pixels by 64 to get amount of pixels))
     }
-//    glDepthMask(GL_TRUE);
-//    glDepthFunc(GL_LESS);
     glBindVertexArray(0);
     glBindTexture(GL_TEXTURE_2D, 0);
 }

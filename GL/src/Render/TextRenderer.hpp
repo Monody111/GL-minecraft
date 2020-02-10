@@ -19,6 +19,7 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "Renderer.hpp"
+#include "GameSetting.hpp"
 
 struct Character {
     GLuint TextureID;   // ID handle of the glyph texture
@@ -36,8 +37,12 @@ public:
     GLuint VAO;
     GLuint VBO;
     
+    glm::mat4 projection;
+    GameSetting *setting = nullptr;
+    
     TextRenderer(const std::string &vertShaderName,
-                 const std::string &fragShaderName);
+                 const std::string &fragShaderName,
+                 GameSetting *setting);
     void render(BasicTexture *t) override;
     void RenderText(std::string text, GLfloat x, GLfloat y, GLfloat scale, glm::vec3 color);
     void loadFT();

@@ -26,6 +26,8 @@ void FPPCamera::setCamera(glm::vec3 cameraPosition, glm::vec3 worldUp,          
     this -> position = cameraPosition;
     this -> WorldUp = worldUp;
     
+    this -> Front = front;
+    
     this->Yaw = yaw;
     this->Pitch = pitch;
     
@@ -33,7 +35,7 @@ void FPPCamera::setCamera(glm::vec3 cameraPosition, glm::vec3 worldUp,          
 }
 
 glm::mat4 FPPCamera::getViewMatrix() const{ 
-    return glm::lookAt(this->position, this->position + this->Front, this->WorldUp);
+    return glm::lookAt(this->position, this->position + this->Front, this->Up);
 }
 
 void FPPCamera::ProcessMovement(Camera_Movement direction, GLfloat velocity) {
@@ -45,18 +47,18 @@ void FPPCamera::ProcessMovement(Camera_Movement direction, GLfloat velocity) {
         this->position -= this->forward * velocity;
     }
     if (direction == RIGHT) {
-        this->position -= this->Right * velocity;
+        this->position += this->Right * velocity;
     }
     if (direction == LEFT) {
-        this->position += this->Right * velocity;
+        this->position -= this->Right * velocity;
     }
 }
 
 void FPPCamera::ProcessMouseMovement(GLfloat offsetX, GLfloat offsetY) {
     offsetX *= setting -> sensitivity;
     offsetY *= setting -> sensitivity;
-    Yaw -= offsetX;
-    Pitch -= offsetY;
+    Yaw += offsetX;
+    Pitch += offsetY;
     if (this->Pitch > 89.0) {
         this->Pitch = 89.0;
     }
@@ -77,26 +79,26 @@ void FPPCamera::ProcessMouseMovement(GLfloat offsetX, GLfloat offsetY) {
 //}
 
 void FPPCamera::updateCameraVectors() {
-    glm::vec3 front(0.0,0.0,-1.0);
-    front.x = cos(glm::radians(this->Yaw)) * cos(glm::radians(this->Pitch));
-    front.y = sin(glm::radians(this->Pitch));
-    front.z = sin(glm::radians(this->Yaw)) * cos(glm::radians(this->Pitch));
-    this->Front = glm::normalize(front);
+    Front.x = cos(glm::radians(this->Yaw)) * cos(glm::radians(this->Pitch));
+    Front.y = sin(glm::radians(this->Pitch));
+    Front.z = sin(glm::radians(this->Yaw)) * cos(glm::radians(this->Pitch));
+    this->Front = glm::normalize(Front);
     this->forward = glm::normalize(glm::vec3(Front.x, 0.0, Front.z));
     this->Right = glm::normalize(glm::cross(this->Front,this->WorldUp));
     this->Up = glm::normalize(glm::cross(this->Right, this->Front));
+
 }
 
 glm::mat4 FPPCamera::getPerspectiveMatrix() const {
-    return glm::perspective(setting->fov, (float)setting->width/setting->height, 0.01f, 1000.0f);
+    return glm::perspective(setting -> fov, (float)setting->width/setting->height, 0.01f, 1000.0f);
 }
 
 void FPPCamera::ProcessVerticality(Camera_Movement direction, GLfloat velocity){
     if (direction == ABOVE) {
-        this->position -= this->WorldUp * velocity;
+        this->position += this->WorldUp * velocity;
     }
     if (direction == BOTTOM) {
-        this->position += this->WorldUp * velocity;
+        this->position -= this->WorldUp * velocity;
     }
 }
 

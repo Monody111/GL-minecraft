@@ -15,7 +15,7 @@ struct GameSetting{
     int width = 800;
     int height = 600;
     bool fullScreen = false;
-    GLfloat fov = 55.0f;
+    GLfloat fov = 45.0f;
     GLfloat speed = 3.0;
     GLfloat sensitivity = 0.08;
 };
